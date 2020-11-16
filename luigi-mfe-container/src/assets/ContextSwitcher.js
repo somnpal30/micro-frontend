@@ -22,7 +22,6 @@ class ContextSwitcher {
     }
 
     this.data = {
-
       defaultLabel: 'language',
       parentNodePath: '/#',
       lazyloadOptions: false,
@@ -41,22 +40,22 @@ class ContextSwitcher {
         {
           label : 'English',
           link : '/en' ,
-          category: "en",
+          //category: "en",
           position : 'bottom',
           clickHandler : node=> {
             console.log(node.label);
-            this.defaultLabel = node.label;
+            //this.defaultLabel = node.label;
             Luigi.i18n().setCurrentLocale("en");
           }
         },
         {
           label : 'German',
           link : '/de' ,
-          category: "de",
+          //category: "de",
           position : 'bottom',
           clickHandler : node=> {
-            console.log(node.label);
-            this.defaultLabel = node.label;
+           // console.log(node.label);
+           // this.defaultLabel = node.label;
             Luigi.i18n().setCurrentLocale("de");
           }
         }

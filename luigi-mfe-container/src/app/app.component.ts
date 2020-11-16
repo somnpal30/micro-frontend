@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
       const cntxSwitcher = new ContextSwitcher(i18nProvider);
       //console.log(cntxSwitcher)
       this.httpClient.get("assets/luigi-config.json").subscribe(data => {
+        //Luigi.i18n().setCurrentLocale('en')
         Luigi.setConfig(data);
         Luigi.getConfigValue('navigation').contextSwitcher = cntxSwitcher.data
         //Luigi.getConfigValue('settings').customTranslationImplementation =i18nProvider

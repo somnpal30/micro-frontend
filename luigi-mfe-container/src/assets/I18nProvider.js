@@ -1,6 +1,7 @@
 class I18nProvider {
   init() {
     // Could also be an Ajax based implementation.
+
     this.translationTable = {
       "en": {
         "language": "Change Language",
@@ -20,6 +21,7 @@ class I18nProvider {
     //console.log("test")
     this.currentLanguage = Luigi.i18n().getCurrentLocale();
     console.log(this.currentLanguage)
+    Luigi.i18n().setCurrentLocale(this.currentLanguage);
     Luigi.i18n().addCurrentLocaleChangeListener((locale) => {
       console.log(locale)
       this.currentLanguage = locale;
