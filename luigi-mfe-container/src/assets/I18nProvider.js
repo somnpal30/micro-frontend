@@ -1,35 +1,36 @@
-
 class I18nProvider {
   init() {
     // Could also be an Ajax based implementation.
     this.translationTable = {
       "en": {
-        "COMMON": {
-          "SELECT_ENVIRONMENT": "Select EN Environment ..."
-        },
-        "LABEL1": 'Label EN',
-        "ENVIRONMENT_NUM": "Environment {num} EN"
+        "language": "Change Language",
+        "overview" : "Overview",
+        "usermanagement" : "User Management"
       },
       "de": {
-        "COMMON": {
-          "SELECT_ENVIRONMENT": "Select DE Environment ..."
-        },
-        "LABEL1": "Label DE",
-        "ENVIRONMENT_NUM": "Environment {num} DE"
+        "language": "Sprache ändern",
+        "overview" : "Überblick",
+        "usermanagement" : "Benutzerverwaltung"
       },
     };
     return Promise.resolve();
   }
 
   afterInit() {
+    //console.log("test")
     this.currentLanguage = Luigi.i18n().getCurrentLocale();
+    console.log(this.currentLanguage)
     Luigi.i18n().addCurrentLocaleChangeListener((locale) => {
+      console.log(locale)
       this.currentLanguage = locale;
+
     });
+
   }
 
   // This function will be used by Luigi Core for translation
   getTranslation(key, interpolations = undefined, locale = undefined) {
+    // console.log(key);
     if (!key) return '';
     this.currentLanguage = locale || this.currentLanguage || Luigi.i18n().getCurrentLocale();
     const result = this.findTranslation(
@@ -69,6 +70,7 @@ class I18nProvider {
    * findInterpolations('Environment {num}', {num: 1})
    */
   findInterpolations(value, interpolations) {
+    console.log(value);
     Object.keys(interpolations).forEach(item => {
       value = value.replace(
         new RegExp('{' + EscapingHelpers.escapeKeyForRegexp(item) + '}', 'gi'),
@@ -79,4 +81,4 @@ class I18nProvider {
   }
 }
 
-//export const i18nProvider = new I18nProvider();
+// export const i18nProvider = new I18nProvider();

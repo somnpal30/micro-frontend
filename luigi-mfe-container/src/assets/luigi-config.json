@@ -7,7 +7,7 @@
         "children": [
           {
             "pathSegment": "overview",
-            "label": "Overview",
+            "label": "overview",
             "icon": "home",
             "viewUrl": "http://localhost:4300/user/approval",
             "loadingIndicator": {
@@ -23,7 +23,7 @@
             "label": "My Approval",
             "icon" : "person-placeholder",
             "category": {
-              "label": "User Management",
+              "label": "usermanagement",
               "icon": "customer",
               "collapsible": true
             },
@@ -41,7 +41,7 @@
             "label": "My User",
             "icon" : "customer",
             "category": {
-              "label": "User Management",
+              "label": "usermanagement",
               "icon": "person-placeholder",
               "collapsible": true
             },
@@ -61,12 +61,6 @@
   },
   "routing": {
     "useHashRouting": true
-  },
-  "settings": {
-    "responsiveNavigation": "semiCollapsible",
-    "header": {
-      "title": "Hello Universe ",
-      "logo": "https://fiddle.luigi-project.io/img/luigi.png"
-    }
   }
+
 }
