@@ -21,7 +21,17 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**",
+                "input": "node_modules/@luigi-project/core",
+                "output": "/luigi-core"
+              },
+              {
+                "glob": "luigi-client.js",
+                "input": "node_modules/@luigi-project/client",
+                "output": "/luigi-client"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -93,8 +103,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/@luigi-project/core/luigi.css"
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/@luigi-project/core/luigi.js",
