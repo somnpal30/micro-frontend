@@ -39,7 +39,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/@luigi-project/core/luigi.js",
-              "src/assets/I18nProvider.js"
+              "src/assets/I18nProvider.js",
+              "src/assets/ContextSwitcher.js"
             ]
           },
           "configurations": {
