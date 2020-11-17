@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 40px;
+  padding-top: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #d3deed;
+}
+a {
+  text-decoration: none !important;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: red !important;
+}
+
+.round-btn{
+  border-radius: 25px !important;
+}
+.red-btn {
+  color : white;
+  background-color: #F02;
+}
+.grey-btn{
+  color : black;
+  background-color: lightgray;
+}
+
+
+.font-weight-bold-selected {
+ font-weight: bold;
+ color: orangered;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*.w-75{*/
+/*  width: 50px;*/
+/*}*/
+
+/*.w-100{*/
+/*  width: 100px;*/
+/*  horiz-align: right;*/
+/*}*/
+
+.button-approve {
+  border-radius: 10px !important;
+  background-color: #00CED1;
+  color: white;
+  border-width: 0px;
+  font-weight: normal;
+
+}
+.button-reject {
+  border-radius: 10px !important;
+  background-color: lightgray;
+  color: black;
+  border-width: 0px;
+  font-weight: normal;
+}
+
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+}
+.header-align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.th-center{
+  text-align: center !important;;
+}
+.th-left{
+  text-align: left;
+}
+.th-right{
+  text-align: right !important;
+}
+
+th {
+  text-align: center;
+}
+
+tr.mat-row:hover {
+  background-color: #f6f6f6;
+}
+
+.right-align {
+  horiz-align: right;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+/*.mat-paginator-range-label {*/
+/*  display: none;*/
+/*}*/

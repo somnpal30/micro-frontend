@@ -1,0 +1,76 @@
+<div class="font-weight-bold">My Users</div>
+
+<br>
+<div class="row p-3">
+  <div class="col-6">
+    <filter-dropdown [options]="options"></filter-dropdown>
+  </div>
+</div>
+<div class="container">
+  <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows class="mat-elevation-z8">
+
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns, let i = index">
+      <th mat-header-cell *matHeaderCellDef> {{displayedColumnValue[i]}} </th>
+
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="element[column]"> {{element[column]}}  </div>
+        <div *ngIf="!element[column]">
+          <mat-icon *ngIf="element!==expandedElement" class="down-arrow">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="element==expandedElement" class="up-arrow">keyboard_arrow_up</mat-icon>
+        </div>
+      </td>
+
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="container rounded">
+          <div class="example-element-detail row"
+               [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <div class="col-2">
+              <div class="element-description-attribution"> Full Name</div>
+              <div class="element-position"><b>{{element.details.full_name}} </b></div>
+            </div>
+            <div class="col-2">
+              <div class="element-description-attribution"> Login ID</div>
+              <div class="element-position"><b>{{element.details.login}}</b></div>
+            </div>
+            <div class="col-2">
+              <div class="element-description-attribution"> Security</div>
+              <div class="element-position"><b>{{element.details.security}}</b></div>
+            </div>
+            <div class="col-2">
+              <div class="element-description-attribution"> Segment</div>
+              <div class="element-position"><b>{{element.details.segment}}</b></div>
+            </div>
+            <div class="col-2">
+              <div class="element-description-attribution"> Regulatory</div>
+              <div class="element-position"><b>{{element.details.regulatory}}</b></div>
+            </div>
+            <div class="col-2">
+              <div class="element-description-attribution"> Marketing</div>
+              <div class="element-position"><b>{{element.details.marketing}}</b></div>
+            </div>
+          </div>
+          <div class="example-element-detail row"
+               [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <div class="col-2 element-position">
+              <button mat-button class="round-btn red-btn-1">VIEW DETAILS</button>
+            </div>
+            <div class="col-2 element-position">
+              <button mat-button class="round-btn  red-btn-2">WITHDRAW</button>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+</div>
