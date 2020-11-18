@@ -17,15 +17,15 @@
               "title": "Welcome to Luigi POC!",
               "content": "Play around with your Luigi configuration Here"
             },
-            "de": true
+            "hideSideNav": false
           },
           {
-            "pathSegment": "user",
+            "pathSegment": "approval",
             "label": "My Approval",
-            "icon" : "person-placeholder",
+            "icon": "person-placeholder",
             "category": {
-              "label": "usermanagement",
-              "icon": "customer",
+              "label": "User Management",
+              "icon": "account",
               "collapsible": true
             },
             "context": {
@@ -40,11 +40,9 @@
           {
             "pathSegment": "user",
             "label": "My User",
-            "icon" : "customer",
+            "icon": "customer",
             "category": {
-              "label": "usermanagement",
-              "icon": "person-placeholder",
-              "collapsible": true
+              "label": "User Management"
             },
             "context": {
               "title": "Welcome to Luigi POC By Somnath !",
@@ -55,7 +53,6 @@
             },
             "viewUrl": "http://localhost:4300/user/myusers"
           }
-
         ]
       }
     ]
@@ -63,5 +60,4 @@
   "routing": {
     "useHashRouting": true
   }
-
 }
