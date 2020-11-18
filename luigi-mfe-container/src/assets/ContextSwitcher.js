@@ -9,8 +9,7 @@ class ContextSwitcher {
       "responsiveNavigation": "semiCollapsible",
       "customTranslationImplementation" : i18nProvider,
       "header": {
-        "title": "Hello Universe ",
-        "logo": "https://fiddle.luigi-project.io/img/luigi.png"
+        "logo": "/assets/image/logo.png",
       }
     }
 

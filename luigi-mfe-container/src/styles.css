@@ -4,12 +4,13 @@
   --sapBrandColor: #0a6ed1  !important ;
   --sapHighlightColor: #0854a0 !important ;
   --sapBaseColor: #fff !important ;
-  --sapShellColor:  #F02  !important ;
+  --sapShellColor:  #fff !important ;
   --sapContent_IconColor:  #F02 !important ;
   --sapList_Active_Background: #F02 !important ;
   --sapList_Hover_SelectionBackground: #ffcccb !important ;
   --sapList_SelectionBackgroundColor: #ffcccb !important ;
   --sapTextColor: #F02 !important ;
+  --sapButton_Lite_Background: #F02 !important ;
 
   --sapBackgroundColor: #f7f7f7 !important ;
   --sapFontFamily: "72", "72full", Arial, Helvetica, sans-serif !important ;
@@ -232,7 +233,7 @@
   --sapButton_Reject_Selected_TextColor: #fff !important ;
   --sapButton_Reject_Selected_Hover_Background: #b00 !important ;
   --sapButton_Reject_Selected_Hover_BorderColor: #b00 !important ;
-  --sapButton_Lite_Background: transparent !important ;
+
   --sapButton_Lite_BorderColor: transparent !important ;
   --sapButton_Lite_TextColor: #0854a0 !important ;
   --sapButton_Lite_Hover_Background: #ebf5fe !important ;

@@ -25,7 +25,7 @@
             "icon": "person-placeholder",
             "category": {
               "label": "User Management",
-              "icon": "account",
+              "icon": "group",
               "collapsible": true
             },
             "context": {
