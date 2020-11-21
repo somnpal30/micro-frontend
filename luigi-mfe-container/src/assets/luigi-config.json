@@ -20,6 +20,20 @@
             "hideSideNav": false
           },
           {
+            "pathSegment": "vue",
+            "label": "Vue App",
+            "icon": "home",
+            "viewUrl": "http://localhost:8080",
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "context": {
+              "title": "Welcome to Luigi POC!",
+              "content": "Play around with your Luigi configuration Here"
+            },
+            "hideSideNav": false
+          },
+          {
             "pathSegment": "approval",
             "label": "My Approval",
             "icon": "person-placeholder",

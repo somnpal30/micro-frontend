@@ -49,15 +49,20 @@ export class UserApprovalComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    const initListenerId = LuigiClient.addInitListener((context) => console.log(context))
+    const initListenerId = LuigiClient.addInitListener((context) => console.log(context));
 
+    const inactiveListenerId = LuigiClient.addInactiveListener(() => {
+      console.log('inactive');
+      return true;
+    });
 
+    console.log(inactiveListenerId)
 
 
     this.subscription = this.eventStoreService.clickEventListener().subscribe(info => {
       //console.log(info)
       if (info !== this.options[0]) {
-        this.selectedFilterValue = info
+        this.selectedFilterValue = info;
       } else {
         this.selectedFilterValue = '';
       }
