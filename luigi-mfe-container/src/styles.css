@@ -5,12 +5,14 @@
   --sapHighlightColor: #0854a0 !important ;
   --sapBaseColor: #fff !important ;
   --sapShellColor:  #fff !important ;
-  --sapContent_IconColor:  #F02 !important ;
-  --sapList_Active_Background: #F02 !important ;
-  --sapList_Hover_SelectionBackground: #ffcccb !important ;
-  --sapList_SelectionBackgroundColor: #ffcccb !important ;
-  --sapTextColor: #F02 !important ;
-  --sapButton_Lite_Background: #F02 !important ;
+  --sapContent_IconColor:   #00CED1 !important ;
+  --sapList_Active_Background:  #00CED1 !important ;
+  --sapList_Hover_SelectionBackground: #AFEEEE !important ;
+  --sapList_SelectionBackgroundColor: #00CED1 !important ;
+  --sapTextColor:  #00CED1 !important ;
+  --sapButton_Lite_Background:  #000000 !important ;
+  --sapShell_BorderColor: #00CED1 !important ;
+  --sapShell_TextColor: #00CED1 !important ;
 
   --sapBackgroundColor: #f7f7f7 !important ;
   --sapFontFamily: "72", "72full", Arial, Helvetica, sans-serif !important ;
@@ -166,8 +168,7 @@
   --sapShell_BackgroundGradient: linear-gradient(to bottom, #dfe3e4, #f3f4f5) !important ;
   --sapShell_BackgroundImageOpacity: 1.0 !important ;
   --sapShell_BackgroundImageRepeat: false !important ;
-  --sapShell_BorderColor: #354a5f !important ;
-  --sapShell_TextColor: #fff !important ;
+
   --sapShell_InteractiveTextColor: #d1e8ff !important ;
   --sapShell_InteractiveBorderColor: #7996b4 !important ;
   --sapShell_GroupTitleTextColor: #32363a !important ;

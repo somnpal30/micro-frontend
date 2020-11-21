@@ -9,7 +9,8 @@ class ContextSwitcher {
       "responsiveNavigation": "semiCollapsible",
       "customTranslationImplementation" : i18nProvider,
       "header": {
-        "logo": "/assets/image/logo.png",
+        "logo": "/assets/image/luigi.png",
+        "title" : "Demo Micro Frontend"
       }
     }
 
