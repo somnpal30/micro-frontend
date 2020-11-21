@@ -29,8 +29,8 @@ export class UserApprovalComponent implements OnInit, OnDestroy {
   dataSource;
   selection = new SelectionModel<ApprovalList>(true, []);
 
-  comment: string = "";
-  selectedFilterValue = ""
+  comment: string = '';
+  selectedFilterValue = '';
 
   subscription: Subscription;
 
@@ -46,8 +46,14 @@ export class UserApprovalComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+
+
   ngOnInit() {
     const initListenerId = LuigiClient.addInitListener((context) => console.log(context))
+
+
+
+
     this.subscription = this.eventStoreService.clickEventListener().subscribe(info => {
       //console.log(info)
       if (info !== this.options[0]) {

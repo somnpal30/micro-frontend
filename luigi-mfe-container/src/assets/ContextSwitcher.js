@@ -9,8 +9,7 @@ class ContextSwitcher {
       "responsiveNavigation": "semiCollapsible",
       "customTranslationImplementation" : i18nProvider,
       "header": {
-        "title": "Hello Universe ",
-        "logo": "https://fiddle.luigi-project.io/img/luigi.png"
+        "logo": "/assets/image/logo.png",
       }
     }
 
@@ -40,23 +39,21 @@ class ContextSwitcher {
         {
           label : 'English',
           link : '/en' ,
-          //category: "en",
+          category: "en",
           position : 'bottom',
           clickHandler : node=> {
-            console.log(node.label);
-            //this.defaultLabel = node.label;
             Luigi.i18n().setCurrentLocale("en");
+            window.location.reload();
           }
         },
         {
           label : 'German',
           link : '/de' ,
-          //category: "de",
+          category: "de",
           position : 'bottom',
-          clickHandler : node=> {
-           // console.log(node.label);
-           // this.defaultLabel = node.label;
+          clickHandler : node => {
             Luigi.i18n().setCurrentLocale("de");
+            window.location.reload();
           }
         }
       ]

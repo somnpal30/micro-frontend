@@ -9,22 +9,23 @@
             "pathSegment": "overview",
             "label": "overview",
             "icon": "home",
-            "viewUrl": "http://localhost:4300/user/approval",
+            "viewUrl": "/overview",
             "loadingIndicator": {
               "enabled": false
             },
             "context": {
-              "title": "Welcome to Luigi Fiddle!",
-              "content": "Click on \"Modify Config\" at the bottom right and play around with your Luigi configuration"
-            }
+              "title": "Welcome to Luigi POC!",
+              "content": "Play around with your Luigi configuration Here"
+            },
+            "hideSideNav": false
           },
           {
-            "pathSegment": "user",
+            "pathSegment": "approval",
             "label": "My Approval",
-            "icon" : "person-placeholder",
+            "icon": "person-placeholder",
             "category": {
-              "label": "usermanagement",
-              "icon": "customer",
+              "label": "User Management",
+              "icon": "group",
               "collapsible": true
             },
             "context": {
@@ -39,11 +40,9 @@
           {
             "pathSegment": "user",
             "label": "My User",
-            "icon" : "customer",
+            "icon": "customer",
             "category": {
-              "label": "usermanagement",
-              "icon": "person-placeholder",
-              "collapsible": true
+              "label": "User Management"
             },
             "context": {
               "title": "Welcome to Luigi POC By Somnath !",
@@ -54,7 +53,6 @@
             },
             "viewUrl": "http://localhost:4300/user/myusers"
           }
-
         ]
       }
     ]
@@ -62,5 +60,4 @@
   "routing": {
     "useHashRouting": true
   }
-
 }

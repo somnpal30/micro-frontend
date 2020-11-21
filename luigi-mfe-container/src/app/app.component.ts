@@ -12,26 +12,7 @@ declare var LuigiConfig: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'luigi-mfe-container';
+export class AppComponent {
 
-  constructor(private httpClient: HttpClient) {
-  }
 
-  ngOnInit() {
-    const i18nProvider = new I18nProvider();
-
-    i18nProvider.init().then(() => {
-      const cntxSwitcher = new ContextSwitcher(i18nProvider);
-      //console.log(cntxSwitcher)
-      this.httpClient.get("assets/luigi-config.json").subscribe(data => {
-        //Luigi.i18n().setCurrentLocale('en')
-        Luigi.setConfig(data);
-        Luigi.getConfigValue('navigation').contextSwitcher = cntxSwitcher.data
-        //Luigi.getConfigValue('settings').customTranslationImplementation =i18nProvider
-        Luigi.getConfig().settings = cntxSwitcher.settings
-        Luigi.getConfig().lifecycleHooks = cntxSwitcher.hook
-      });
-    });
-  }
 }
