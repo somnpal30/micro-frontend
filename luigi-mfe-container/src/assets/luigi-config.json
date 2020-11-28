@@ -52,7 +52,74 @@
               "enabled": false
             },
             "viewUrl": "http://localhost:4300/user/myusers"
+          },
+          {
+            "pathSegment": "search",
+            "label": "Create Menu",
+            "icon": "customer",
+            "category": {
+              "label": "Menu Management",
+              "icon" :  "menu",
+              "collapsible": true
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:8080/MenuManagementUI/jsp/searchPage.jsp"
+          },
+          {
+            "pathSegment": "approve",
+            "label": "Approve",
+            "icon": "customer",
+            "category": {
+              "label": "Menu Management",
+              "icon" :  "menu"
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:8080/MenuManagementUI/jsp/checkerPage.jsp"
+          },
+          {
+            "pathSegment": "channel",
+            "label": "Add Channel User",
+            "category": {
+              "label": "Channel User Management",
+              "icon" :  "account",
+              "collapsible": true
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:8082/CoreWeb/channel/add1_addChannelUser.action"
+          },
+          {
+            "pathSegment": "preference",
+            "label": "System Preference",
+            "category": {
+              "label": "Preference",
+              "icon" :  "customize",
+              "collapsible": true
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:8082/CoreWeb/preferences/preferences_input.action"
+          },
+          {
+            "pathSegment": "stock",
+            "label": "Stock Initiate",
+            "category": {
+              "label": "Stock Management",
+              "icon" :  "product",
+              "collapsible": true
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:8082/CoreWeb/stock/stockInit_input.action"
           }
+
         ]
       }
     ]
