@@ -34,6 +34,7 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -41,7 +42,9 @@
               "node_modules/@luigi-project/core/luigi.js",
               "src/assets/I18nProvider.js",
               "src/assets/ContextSwitcher.js",
-              "src/assets/luigi-config.js"
+              "src/assets/luigi-config.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {

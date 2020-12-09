@@ -19,7 +19,8 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
 
     addInitListener(initialContext => {
-      this.title = initialContext.title;
+      //this.title = initialContext.title;
+      this.title = "Login page"
       this.content = initialContext.content;
       this.ref.detectChanges();
     });

@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "nodes": [
+      {
+        "pathSegment": "home",
+        "hideFromNav": true,
+        "children": [
+          {
+            "pathSegment": "overview",
+            "label": "overview",
+            "icon": "home",
+            "viewUrl": "/overview",
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "context": {
+              "title": "Welcome to Luigi POC!",
+              "content": "Play around with your Luigi configuration Here"
+            },
+            "hideSideNav": false
+          },
+          {
+            "pathSegment": "vue",
+            "label": "Vue App",
+            "icon": "home",
+            "viewUrl": "http://localhost:8080",
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "context": {
+              "title": "Welcome to Luigi POC!",
+              "content": "Play around with your Luigi configuration Here"
+            },
+            "hideSideNav": false
+          },
+          {
+            "pathSegment": "approval",
+            "label": "My Approval",
+            "icon": "person-placeholder",
+            "category": {
+              "label": "User Management",
+              "icon": "group",
+              "collapsible": true
+            },
+            "context": {
+              "title": "Welcome to Luigi POC By Somnath !",
+              "content": "Dummy Content"
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:4300/user/approval"
+          },
+          {
+            "pathSegment": "user",
+            "label": "My User",
+            "icon": "customer",
+            "category": {
+              "label": "User Management"
+            },
+            "context": {
+              "title": "Welcome to Luigi POC By Somnath !",
+              "content": "Dummy Content"
+            },
+            "loadingIndicator": {
+              "enabled": false
+            },
+            "viewUrl": "http://localhost:4300/user/myusers"
+          }
+        ]
+      }
+    ]
+  },
+  "routing": {
+    "useHashRouting": true
+  }
+}
