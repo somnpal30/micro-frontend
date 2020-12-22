@@ -8,7 +8,7 @@
           {
             "pathSegment": "overview",
             "label": "overview",
-            "icon": "home",
+            "icon": "bbyd-dashboard",
             "viewUrl": "/overview",
             "loadingIndicator": {
               "enabled": false
@@ -20,10 +20,10 @@
             "hideSideNav": false
           },
           {
-            "pathSegment": "vue",
-            "label": "Vue App",
-            "icon": "home",
-            "viewUrl": "http://localhost:8080",
+            "pathSegment": "approvals",
+            "label": "Approvals",
+            "icon": "approvals",
+            "viewUrl": "http://localhost:8081/struts-app/dashboard/login.action?token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5RGN3Yk5DZDlMWG8tQl9aSkJnWkZDQXlJSlRELWlLQjlmQ3ZWQUVmTmE0In0.eyJleHAiOjE2MDc1MTM4MTgsImlhdCI6MTYwNzUxMzUxOCwianRpIjoiY2ZjYmIyMDAtODQyMC00ZTQ2LTk1NjgtOGRjZDEzYTEwNGYyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL2F1dGgvcmVhbG1zL2RpZ2l0YWwiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZjo4N2RmMDM5Yy1iYTlmLTQxZWUtOWQ3Ni05MTA4NDVhYzlmNzY6bXl1c2VyMiIsInR5cCI6IkJlYXJlciIsImF6cCI6Im5ldGFkbSIsInNlc3Npb25fc3RhdGUiOiJjNGZhZjA5Ny05YjdhLTRiZWYtOWIwOC0yYjljYmExMzQ3MDEiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInBob25lIjpbIjc4Nzg3ODc4NzgiLCI5NDk0OTQ1NjU2Il0sInByZWZlcnJlZF91c2VybmFtZSI6Im15dXNlcjIifQ.D7a6HkzfiNOPI8IUu9gCs7ew_vkz_gn45iyudbdokIf6Kews-1ByPTb8mR3fxqnGWT_RBMLQFJU1Vea-swzud_aOOApfGtO7z9Tzr1X3T7laAq50TYiYT4Ya6_ned5A-uO89VjWkj4-K9CJeGEvhQdeVbGRduhlqTpZz8JhefOZGLY7CdNi5C2ZA1UPLzzAO5kbKonkuKuW5NpPRiBV7VX74iXIC2csNjHRQns2AXeSIU66ILt9aorJfsljbv3i_bBsrVlwSXfKSLq_HmMkHATKdjzEsoIb73P40cGRqAAiTCq1uNOePCgauGiQor4QlBT14QVADxNHAy8gRY7ZUWQ",
             "loadingIndicator": {
               "enabled": false
             },

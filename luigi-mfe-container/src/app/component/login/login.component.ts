@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       this.httpClient.get("assets/luigi-config-2.json").subscribe(
         data => {
 
-          //Luigi.setConfig(data);
+          Luigi.setConfig(data);
           //Luigi.configChanged('navigation')
           console.log(Luigi.getConfigValue('navigation'));
           //console.log( Luigi.getConfigValue('navigation'));
