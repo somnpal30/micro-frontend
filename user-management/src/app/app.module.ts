@@ -10,13 +10,14 @@ import {UserViewComponent} from './users-view-approval/component/user-view/user-
 import {MatUiModule} from './mat-ui.module';
 import {UserApprovalModule} from './users-view-approval/component/user-approval/user-approval.module';
 import {UserSubmissionModule} from './users-view-approval/component/user-submission/user-submission.module';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { OtpComponent } from './view/otp/otp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent, UserViewComponent,
+    UserComponent, UserViewComponent, OtpComponent,
   ],
   imports: [
     HttpClientModule,

@@ -29,7 +29,7 @@ export class UserApprovalComponent implements OnInit, OnDestroy {
   dataSource;
   selection = new SelectionModel<ApprovalList>(true, []);
 
-  comment: string = '';
+  comment: any = '';
   selectedFilterValue = '';
 
   subscription: Subscription;

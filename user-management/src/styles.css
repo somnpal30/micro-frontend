@@ -4,12 +4,20 @@ html, body {
   height: 100%;
 }
 
-body {
+.body-gray {
   margin: 20px;
   padding-top: 20px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #d3deed;
+  background-color: #fbfbfb;
 }
+
+.body-white {
+  margin: 20px;
+  padding-top: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -49,7 +57,7 @@ table{
 /*}*/
 
 .button-approve {
-  border-radius: 10px !important;
+  border-radius: 25px !important;
   background-color: #00CED1;
   color: white;
   border-width: 0px;
@@ -57,7 +65,7 @@ table{
 
 }
 .button-reject {
-  border-radius: 10px !important;
+  border-radius: 25px !important;
   background-color: lightgray;
   color: black;
   border-width: 0px;
@@ -101,3 +109,11 @@ th.mat-sort-header-sorted {
 /*.mat-paginator-range-label {*/
 /*  display: none;*/
 /*}*/
+.filter-container {
+  background-color: #fbfbfb;
+  width: 120px;
+  border-radius: 7px;
+ }
+.float-right {
+  horiz-align: right;
+}

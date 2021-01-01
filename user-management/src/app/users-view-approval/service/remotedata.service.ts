@@ -1,21 +1,29 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {ApprovalList} from '../model/approval-list';
-import {Observable} from 'rxjs';
-import {environment} from '../../../environments/environment';
-import {MyUsers} from '../model/my-users';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ApprovalList } from '../model/approval-list';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { MyUsers } from '../model/my-users';
+import { OtpResp } from '../model/otpResp';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RemotedataService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  loadApprovalList = () : Observable<ApprovalList[]> => {
+  loadApprovalList = (): Observable<ApprovalList[]> => {
     return this.httpClient.get<ApprovalList[]>(environment.approval_list);
-  }
-  loadMyUserList = () : Observable<MyUsers[]> => {
+  };
+  loadMyUserList = (): Observable<MyUsers[]> => {
     return this.httpClient.get<MyUsers[]>(environment.myuser_list);
-  }
+  };
+
+  validateOTP = (data: any): Observable<OtpResp> => {
+
+    return this.httpClient.post<OtpResp>('http://localhost:8888/auth-api/otp-validate', data , {  });
+  };
+
 }
