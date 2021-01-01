@@ -18,6 +18,15 @@ html, body {
   background-color: #ffffff;
 }
 
+.otpcontainer {
+  /*width: 300px;*/
+  width : 40%;
+  height: 40%;
+  padding-top: 40px;
+  padding-left: 30px;
+
+}
+
 a {
   text-decoration: none !important;
 }
@@ -37,7 +46,24 @@ a {
   background-color: lightgray;
 }
 
-
+.otp-btn {
+  border-radius: 25px !important;
+  color : white;
+  background-color: #F02;
+  max-width: 25rem;
+  left: 35%;
+}
+.otp-input
+{
+  border-radius : 25px !important;
+}
+.otp-input:focus
+{
+  border-radius : 25px !important;
+  outline: none !important;
+  border-width : 2px !important;
+  border-color: #0275d8 !important;
+}
 .font-weight-bold-selected {
  font-weight: bold;
  color: orangered;

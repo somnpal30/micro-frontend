@@ -10,6 +10,16 @@ import { RemotedataService } from '../../users-view-approval/service/remotedata.
 })
 export class OtpComponent implements OnInit {
 
+  otpval:any;
+  config = {
+    allowNumbersOnly: true,
+    length: 4,
+    isPasswordInput: false,
+    disableAutoFocus: true,
+    placeholder: ''
+
+  };
+
   constructor(private route: ActivatedRoute, private httpService: RemotedataService) {
   }
 
@@ -17,15 +27,24 @@ export class OtpComponent implements OnInit {
   }
 
   submit = () => {
-    let otpObject = new Otp();
-    otpObject.otp = '2345';
-    otpObject.session_state = this.route.snapshot.queryParamMap.get('session_state');
-    otpObject.prng = this.route.snapshot.queryParamMap.get('prng');
-    this.httpService.validateOTP(otpObject).subscribe(resp => {
-      //window.location.href = 'http://localhost:4200?'+ resp.location
-      window.location.href = resp.location
-    },error => {
-      console.log(error)
-    });
+    if(this.otpval?.length === this.config.length){
+      let otpObject = new Otp();
+      otpObject.otp = this.otpval;
+      otpObject.session_state = this.route.snapshot.queryParamMap.get('session_state');
+      otpObject.prng = this.route.snapshot.queryParamMap.get('prng');
+      this.httpService.validateOTP(otpObject).subscribe(resp => {
+        //window.location.href = 'http://localhost:4200?'+ resp.location
+        window.location.href = resp.location;
+      }, error => {
+        console.log(error);
+      });
+    }
+
+  };
+
+  onOtpChange = (event: any) => {
+    this.otpval = event.toString();
+
+
   };
 }

@@ -1,3 +1,11 @@
-<p>otp works!</p>
-
-<button (click)='submit()'>OTP submit</button>
+<div class='d-flex justify-content-center'>
+  <div class='card bg-light mb-3 mat-elevation-z8' style='max-width: 40rem;'>
+    <div class='card-body'>
+      <h5 class='card-title'>OTP</h5>
+      <ng-otp-input (onInputChange)='onOtpChange($event)' [config]='config'></ng-otp-input>
+    </div>
+    <div class='card-footer'>
+      <button mat-button cdkFocusInitia class='otp-btn' (click)='submit()'>Verify</button>
+    </div>
+  </div>
+</div>

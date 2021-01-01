@@ -13,6 +13,7 @@ import {UserSubmissionModule} from './users-view-approval/component/user-submiss
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { OtpComponent } from './view/otp/otp.component';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { OtpComponent } from './view/otp/otp.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    NgOtpInputModule,
     BrowserAnimationsModule,
     MatUiModule,
     UserApprovalModule,
