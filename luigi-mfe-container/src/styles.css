@@ -20,7 +20,7 @@ body {
   --sapBrandColor: #0a6ed1;
   --sapHighlightColor: #0854a0;
   --sapBaseColor: #fff;
-  --sapShellColor: #fff !important;
+  --sapShellColor: #0854a0 !important;
   --sapContent_IconColor: #F02 !important;
   --sapList_Active_Background: #F02 !important;
   --sapList_Hover_SelectionBackground: #ffcccb !important;

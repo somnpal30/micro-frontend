@@ -19,20 +19,32 @@ loadLuigi = () => {
             }
           ]
         }
-      ],
-      profile: {
-        logout: {
-          label: 'Logout',
-          //customLogoutFn: 'myLogoutFn'
-        }
-      }
+      ]
     },
     communication: {
       customMessagesListeners: {
         'overview': () => {
+          Luigi.auth().store.setAuthData(
+            {
+              accessToken: 'xxxxxxxxx',
+              accessTokenExpirationDate : new Date(),
+              idToken: 'YYYYY',
+              scope: 'email profile'
+            }
+          );
+          Luigi.auth().store.setNewlyAuthorized();
           loadLuigiPostLogin()
+
         }
       }
+    },
+    auth : {
+      storage: 'sessionStorage',
+      disableAutoLogin: true,
+      /*use: 'custAuthProvider',
+      custAuthProvider: {
+
+      }*/
     },
     routing: {
       /**
@@ -75,12 +87,18 @@ loadLuigiPostLogin = () => {
           ]
         }
       ],
-      profile: {
+
+  /*    profile: {
         logout: {
           label: 'Logout',
-          customLogoutFn: 'myLogoutFn'
+          customLogoutFn: () => {
+            console.log('logout >>>');
+          }
+        },
+        staticUserInfoFn: () => {
+          return {"name" : "Steve Roger","email" : "somnath.pal1@gmail.com","picture" : "/assets/image/ca.jpg"};
         }
-      }
+      }*/
     },
     routing: {
       /**
