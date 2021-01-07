@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Otp } from '../../users-view-approval/model/otp';
 import { ActivatedRoute } from '@angular/router';
 import { RemotedataService } from '../../users-view-approval/service/remotedata.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-otp',
@@ -11,6 +12,8 @@ import { RemotedataService } from '../../users-view-approval/service/remotedata.
 export class OtpComponent implements OnInit {
 
   otpval:any;
+  warningMsg ;
+
   config = {
     allowNumbersOnly: true,
     length: 4,
@@ -36,7 +39,9 @@ export class OtpComponent implements OnInit {
         //window.location.href = 'http://localhost:4200?'+ resp.location
         window.location.href = resp.location;
       }, error => {
-        console.log(error);
+        var err = error as HttpErrorResponse;
+        this.warningMsg = err.error;
+
       });
     }
 
@@ -44,7 +49,5 @@ export class OtpComponent implements OnInit {
 
   onOtpChange = (event: any) => {
     this.otpval = event.toString();
-
-
   };
 }

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 declare var Luigi: any;
-declare var I18nProvider: any;
-declare var ContextSwitcher: any;
+declare function loadLuigi():any;
 
 @Component({
   selector: 'app-luigi',
@@ -11,24 +10,22 @@ declare var ContextSwitcher: any;
   styleUrls: ['./luigi.component.css']
 })
 export class LuigiComponent implements OnInit {
+  data = {
+    msg: 'luigi.auth.tokenIssued',
+    authData: {
+      accessToken: new Date().getMilliseconds()
+    }
+  };
 
   constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit() {
-    const i18nProvider = new I18nProvider();
+    loadLuigi()
+    /*this.httpClient.get('assets/luigi-config.json').subscribe(data => {
+      Luigi.setConfig(data);
 
-    i18nProvider.init().then(() => {
-      const cntxSwitcher = new ContextSwitcher(i18nProvider);
-      //console.log(cntxSwitcher)
-      this.httpClient.get("assets/luigi-config.json").subscribe(data => {
-        //Luigi.i18n().setCurrentLocale('en')
-        Luigi.setConfig(data);
-        Luigi.getConfigValue('navigation').contextSwitcher = cntxSwitcher.data
-        //Luigi.getConfigValue('settings').customTranslationImplementation =i18nProvider
-        Luigi.getConfig().settings = cntxSwitcher.settings
-        Luigi.getConfig().lifecycleHooks = cntxSwitcher.hook
-      });
-    });
+    });*/
+
   }
 }

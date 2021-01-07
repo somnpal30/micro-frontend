@@ -1,0 +1,62 @@
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+
+declare var Luigi: any;
+declare var I18nProvider: any;
+declare var ContextSwitcher: any;
+
+@Component({
+  selector: 'app-luigi',
+  templateUrl: './luigi.component.html',
+  styleUrls: ['./luigi.component.css']
+})
+export class LuigiComponent implements OnInit {
+  data = {
+    msg: 'luigi.auth.tokenIssued',
+    authData: {
+      accessToken: new Date().getMilliseconds()
+    }
+  };
+  constructor(private httpClient: HttpClient, private router: Router) {
+  }
+
+  ngOnInit() {
+    const i18nProvider = new I18nProvider();
+    //window.postMessage(this.data,[]) ;
+    i18nProvider.init().then(() => {
+      const cntxSwitcher = new ContextSwitcher(i18nProvider);
+      //console.log(cntxSwitcher)
+      this.httpClient.get('assets/luigi-config.json').subscribe(data => {
+        //Luigi.i18n().setCurrentLocale('en')
+        Luigi.setConfig(data);
+        Luigi.getConfigValue('navigation').contextSwitcher = cntxSwitcher.data;
+        //Luigi.getConfigValue('settings').customTranslationImplementation =i18nProvider
+        Luigi.getConfig().settings = cntxSwitcher.settings;
+        Luigi.getConfig().lifecycleHooks = cntxSwitcher.hook;
+        Luigi.auth().store.setAuthData({
+          'accessToken': new Date().getMilliseconds()
+        });
+        //Luigi.auth().store.setNewlyAuthorized();
+        Luigi.auth().login = () => {
+          console.log('login');
+          // this.router.navigate(['overview']);
+
+        };
+        Luigi.auth().userInfo = (): Promise<Object> => {
+          let data = {name: 'somnath', email: 'a@a.com', picture: 'mypicture.jpg'};
+          return new Promise(resolve => {
+            console.log(data);
+            resolve(data);
+          });
+        };
+       // Luigi.auth().authorizationEnabled= true;
+        console.log(Luigi.auth());
+       /* Luigi.auth().then(res => {
+          console.log(res);
+        });*/
+
+      });
+    });
+  }
+}

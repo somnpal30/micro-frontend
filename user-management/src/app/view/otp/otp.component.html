@@ -3,9 +3,10 @@
     <div class='card-body'>
       <h5 class='card-title'>OTP</h5>
       <ng-otp-input (onInputChange)='onOtpChange($event)' [config]='config'></ng-otp-input>
+      <div class='retry'>{{warningMsg}}</div>
     </div>
     <div class='card-footer'>
-      <button mat-button cdkFocusInitia class='otp-btn' (click)='submit()'>VERIFY</button>
+      <button mat-button cdkFocusInitia class='otp-btn' (click)='submit()'>OK</button>
     </div>
   </div>
 </div>

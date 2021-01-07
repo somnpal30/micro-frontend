@@ -4,6 +4,8 @@ import {
   addInitListener,
   //addContextUpdateListener
 } from '@luigi-project/client';
+import {HttpClient} from '@angular/common/http';
+import {LuigiContextService} from '@luigi-project/client-support-angular';
 
 @Component({
   selector: 'app-overview',
@@ -14,15 +16,17 @@ export class OverviewComponent implements OnInit {
   title: string;
   content: string;
 
-  constructor(private ref: ChangeDetectorRef) {}
+  constructor(private ref: ChangeDetectorRef, private contextService : LuigiContextService) {}
 
   ngOnInit(): void {
 
-    addInitListener(initialContext => {
+    console.log(this.contextService)
+
+    /*addInitListener(initialContext => {
       this.title = initialContext.title;
       this.content = initialContext.content;
       this.ref.detectChanges();
-    });
+    });*/
   }
     // this.title = "testing..."
 

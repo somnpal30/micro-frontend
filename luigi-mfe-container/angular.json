@@ -34,14 +34,17 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/@luigi-project/core/luigi.js",
+              "node_modules/@luigi-project/client/luigi-client.js",
               "src/assets/I18nProvider.js",
               "src/assets/ContextSwitcher.js",
-              "src/assets/luigi-config.js"
+              "src/assets/luigi-config.js",
+              "src/assets/script/sample.js"
             ]
           },
           "configurations": {
@@ -109,6 +112,7 @@
             ],
             "scripts": [
               "node_modules/@luigi-project/core/luigi.js",
+              "node_modules/@luigi-project/plugin-auth-oidc/plugin.js",
               "node_modules/jquery/dist/jquery.min.js"
             ]
           }

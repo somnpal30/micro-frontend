@@ -59,7 +59,7 @@
             "icon": "customer",
             "category": {
               "label": "Menu Management",
-              "icon" :  "menu",
+              "icon": "menu",
               "collapsible": true
             },
             "loadingIndicator": {
@@ -73,7 +73,7 @@
             "icon": "customer",
             "category": {
               "label": "Menu Management",
-              "icon" :  "menu"
+              "icon": "menu"
             },
             "loadingIndicator": {
               "enabled": false
@@ -85,7 +85,7 @@
             "label": "Add Channel User",
             "category": {
               "label": "Channel User Management",
-              "icon" :  "account",
+              "icon": "account",
               "collapsible": true
             },
             "loadingIndicator": {
@@ -98,7 +98,7 @@
             "label": "System Preference",
             "category": {
               "label": "Preference",
-              "icon" :  "customize",
+              "icon": "customize",
               "collapsible": true
             },
             "loadingIndicator": {
@@ -111,7 +111,7 @@
             "label": "Stock Initiate",
             "category": {
               "label": "Stock Management",
-              "icon" :  "product",
+              "icon": "product",
               "collapsible": true
             },
             "loadingIndicator": {
@@ -119,12 +119,16 @@
             },
             "viewUrl": "http://localhost:8082/CoreWeb/stock/stockInit_input.action"
           }
-
         ]
       }
     ]
   },
   "routing": {
     "useHashRouting": true
+  },
+  "auth": {
+    "storage": "sessionStorage",
+    "disableAutoLogin": false
+
   }
 }
