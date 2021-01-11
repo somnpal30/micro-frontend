@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+.body-gray {
+  margin: 20px;
+  padding-top: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fbfbfb;
+}
+
+.body-white {
+  margin: 20px;
+  padding-top: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+}
+
+.otpcontainer {
+  /*width: 300px;*/
+  width : 40%;
+  height: 40%;
+  padding-top: 40px;
+  padding-left: 30px;
+
+}
+
+a {
+  text-decoration: none !important;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: red !important;
+}
+
+.round-btn{
+  border-radius: 25px !important;
+}
+.red-btn {
+  color : white;
+  background-color: #F02;
+}
+.grey-btn{
+  color : black;
+  background-color: lightgray;
+}
+
+.otp-btn {
+  border-radius: 25px !important;
+  color : white;
+  background-color: #F02;
+  max-width: 25rem;
+  left: 35%;
+}
+.otp-input
+{
+  border-radius : 25px !important;
+}
+.otp-input:focus
+{
+  border-radius : 25px !important;
+  outline: none !important;
+  border-width : 2px !important;
+  border-color: #0275d8 !important;
+}
+.font-weight-bold-selected {
+ font-weight: bold;
+ color: orangered;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*.w-75{*/
+/*  width: 50px;*/
+/*}*/
+
+/*.w-100{*/
+/*  width: 100px;*/
+/*  horiz-align: right;*/
+/*}*/
+
+.button-approve {
+  border-radius: 25px !important;
+  background-color: #00CED1;
+  color: white;
+  border-width: 0px;
+  font-weight: normal;
+
+}
+.button-reject {
+  border-radius: 25px !important;
+  background-color: lightgray;
+  color: black;
+  border-width: 0px;
+  font-weight: normal;
+}
+
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+}
+.header-align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.th-center{
+  text-align: center !important;;
+}
+.th-left{
+  text-align: left;
+}
+.th-right{
+  text-align: right !important;
+}
+
+th {
+  text-align: center;
+}
+
+tr.mat-row:hover {
+  background-color: #f6f6f6;
+}
+
+.right-align {
+  horiz-align: right;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+/*.mat-paginator-range-label {*/
+/*  display: none;*/
+/*}*/
+.filter-container {
+  background-color: #fbfbfb;
+  width: 120px;
+  border-radius: 7px;
+ }
+.float-right {
+  horiz-align: right;
+}

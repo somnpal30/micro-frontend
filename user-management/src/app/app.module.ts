@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -16,6 +16,7 @@ import {OtpComponent} from './view/otp/otp.component';
 import {NgOtpInputModule} from 'ng-otp-input';
 import {AuthzComponent} from './view/authz/authz.component';
 import {SharedModule} from './users-view-approval/component/shared/shared.module';
+import {AppInitService} from './app-init.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,10 @@ import {SharedModule} from './users-view-approval/component/shared/shared.module
     }),
     SharedModule
   ],
-  providers: [],
+  providers: [
+    AppInitService,
+    {provide: APP_INITIALIZER,useFactory: initializeApp1, deps: [AppInitService], multi: true}
+  ],
   bootstrap: [AppComponent],
   exports: []
 })
@@ -52,4 +56,9 @@ export class AppModule {
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
+}
+export function initializeApp1(appInitService: AppInitService) {
+  return (): Promise<any> => {
+    return appInitService.Init();
+  }
 }
