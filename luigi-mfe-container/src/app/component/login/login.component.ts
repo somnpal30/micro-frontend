@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   login = () => {
+    //otp.
     LuigiClient.sendCustomMessage({id: 'overview'});
   }
 }

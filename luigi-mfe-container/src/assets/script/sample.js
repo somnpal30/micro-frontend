@@ -5,14 +5,14 @@ loadLuigi = () => {
         {
           pathSegment: 'login',
           // label: 'User Last Login : ' + new Date().toLocaleString("en-CA", {timeZone: "IST"}),
-          hideFromNav: true,
+          hideFromNav: false,
           children: [
             {
               pathSegment: 'auth',
               label: 'Overview',
               icon: 'bbyd-dashboard',
               viewUrl: "/login",
-              hideSideNav: true,
+              hideSideNav: false,
               loadingIndicator: {
                 enabled: false
               }
@@ -26,25 +26,31 @@ loadLuigi = () => {
         'overview': () => {
           Luigi.auth().store.setAuthData(
             {
-              accessToken: 'xxxxxxxxx',
+              accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTAwNzUzMjEsImV4cCI6MTY0MTYxMTMyMSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IlN0ZXZlIiwiU3VybmFtZSI6IlJvZ2VyIiwiRW1haWwiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.T2DjDlQLYNBac26WQfh7vtBkAax8RtQwkSG4VtXSjB0',
               accessTokenExpirationDate : new Date(),
-              idToken: 'YYYYY',
+              idToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTAwNzUzMjEsImV4cCI6MTY0MTYxMTMyMSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IlN0ZXZlIiwiU3VybmFtZSI6IlJvZ2VyIiwiRW1haWwiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.T2DjDlQLYNBac26WQfh7vtBkAax8RtQwkSG4VtXSjB0',
               scope: 'email profile'
             }
           );
+
           Luigi.auth().store.setNewlyAuthorized();
-          loadLuigiPostLogin()
+          Luigi.auth().login();
+          loadLuigiPostLogin('Steve Roger','a@a.com')
 
         }
       }
     },
     auth : {
       storage: 'sessionStorage',
-      disableAutoLogin: true,
-      /*use: 'custAuthProvider',
-      custAuthProvider: {
-
-      }*/
+      disableAutoLogin: false,
+      events: {
+        onAuthSuccessful: (settings, authData) => { console.log(settings);},
+        onAuthError: (settings, err) => {console.log("onAuthError")},
+        onAuthExpired: (settings) => {},
+        onLogout: (settings) => { console.log('logout event..')},
+        onAuthExpireSoon: (settings) => {},
+        onAuthConfigError: (settings, err) => { console.log('onAuthConfigError')}
+      }
     },
     routing: {
       /**
@@ -65,7 +71,7 @@ loadLuigi = () => {
 
 }
 
-loadLuigiPostLogin = () => {
+loadLuigiPostLogin = (name,email) => {
   console.log(Luigi.getConfig())
   Luigi.setConfig({
     navigation: {
@@ -88,17 +94,18 @@ loadLuigiPostLogin = () => {
         }
       ],
 
-  /*    profile: {
+    profile: {
         logout: {
           label: 'Logout',
           customLogoutFn: () => {
-            console.log('logout >>>');
+            console.log('logout >>>' + Luigi.auth().isAuthorizationEnabled());
+            //Luigi.auth().logout();
           }
         },
         staticUserInfoFn: () => {
-          return {"name" : "Steve Roger","email" : "somnath.pal1@gmail.com","picture" : "/assets/image/ca.jpg"};
+          return {"name" : name,"email" : email,"picture" : "/assets/image/ca.jpg"};
         }
-      }*/
+      }
     },
     routing: {
       /**

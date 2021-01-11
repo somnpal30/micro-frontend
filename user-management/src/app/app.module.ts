@@ -12,8 +12,10 @@ import {UserApprovalModule} from './users-view-approval/component/user-approval/
 import {UserSubmissionModule} from './users-view-approval/component/user-submission/user-submission.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { OtpComponent } from './view/otp/otp.component';
-import { NgOtpInputModule } from 'ng-otp-input';
+import {OtpComponent} from './view/otp/otp.component';
+import {NgOtpInputModule} from 'ng-otp-input';
+import {AuthzComponent} from './view/authz/authz.component';
+import {SharedModule} from './users-view-approval/component/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { NgOtpInputModule } from 'ng-otp-input';
       },
       //defaultLanguage: 'fr',
       //useDefaultLang :true
-    })
+    }),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

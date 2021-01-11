@@ -30,6 +30,7 @@ export class OtpComponent implements OnInit {
   }
 
   submit = () => {
+    console.log("btn click.");
     if(this.otpval?.length === this.config.length){
       let otpObject = new Otp();
       otpObject.otp = this.otpval;

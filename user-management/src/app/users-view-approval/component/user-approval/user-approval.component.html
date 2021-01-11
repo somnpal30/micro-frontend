@@ -64,12 +64,15 @@
         <button mat-raised-button class="button-approve" (click)="approve(element.id)">{{displayedColumnValue[6] | uppercase}} </button>
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="action2">
-      <mat-header-cell  *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center">
-        <button mat-raised-button class="button-reject" (click)="reject(element.id)">{{displayedColumnValue[7] | uppercase}}</button>
-      </mat-cell>
-    </ng-container>
+
+      <ng-container matColumnDef="action2">
+        <mat-header-cell  *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center">
+          <app-authz role="admin">
+            <button mat-raised-button class="button-reject" (click)="reject(element.id)">{{displayedColumnValue[7] | uppercase}}</button>
+          </app-authz>
+        </mat-cell>
+      </ng-container>
 
     <mat-header-row  *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="showDetails(row)"></mat-row>
