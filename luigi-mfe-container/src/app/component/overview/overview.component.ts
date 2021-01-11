@@ -1,10 +1,4 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import * as LuigiClient from '@luigi-project/client';
-import {
-  addInitListener,
-  //addContextUpdateListener
-} from '@luigi-project/client';
-import {HttpClient} from '@angular/common/http';
 import {LuigiContextService} from '@luigi-project/client-support-angular';
 
 @Component({
@@ -16,7 +10,7 @@ export class OverviewComponent implements OnInit {
   title: string;
   content: string;
 
-  constructor(private ref: ChangeDetectorRef, private contextService : LuigiContextService) {}
+  constructor(private ref: ChangeDetectorRef, private contextService: LuigiContextService) {}
 
   ngOnInit(): void {
 

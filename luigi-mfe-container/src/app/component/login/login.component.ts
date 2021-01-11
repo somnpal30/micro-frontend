@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {LuigiContextService} from '@luigi-project/client-support-angular';
 declare var LuigiClient: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +9,10 @@ declare var LuigiClient: any;
 })
 export class LoginComponent implements OnInit {
   hide = false;
-  constructor() { }
+  constructor(private contextService : LuigiContextService) { }
 
   ngOnInit(): void {
+
   }
 
   login = () => {

@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 declare var Luigi: any;
-declare function loadLuigi():any;
+
+declare function loadLuigi(): any;
 
 @Component({
   selector: 'app-luigi',
@@ -21,7 +22,7 @@ export class LuigiComponent implements OnInit {
   }
 
   ngOnInit() {
-    loadLuigi()
+    loadLuigi();
     /*this.httpClient.get('assets/luigi-config.json').subscribe(data => {
       Luigi.setConfig(data);
 
