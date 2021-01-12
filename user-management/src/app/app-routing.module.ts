@@ -6,6 +6,7 @@ import {UserApprovalComponent} from './users-view-approval/component/user-approv
 import {UserSubmissionComponent} from './users-view-approval/component/user-submission/user-submission.component';
 import {OtpComponent} from './view/otp/otp.component';
 import {UnauthComponent} from './view/unauth/unauth.component';
+import {AuthorizeGuard} from './common/utils/AuthorizeGuard';
 
 const routes: Routes = [
 
@@ -13,7 +14,7 @@ const routes: Routes = [
   {
     path: 'user', component: UserComponent, children: [
       {path: 'myusers', component: UserSubmissionComponent},
-      {path: 'approval', component: UserApprovalComponent},
+      {path: 'approval', component: UserApprovalComponent, canActivate: [AuthorizeGuard]},
       {path: 'view-details', component: UserViewComponent}
     ]
   },

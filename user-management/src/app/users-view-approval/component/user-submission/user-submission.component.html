@@ -1,13 +1,12 @@
-<div class="font-weight-bold">My Users</div>
+<!--<div class="font-weight-bold">My Users</div>-->
 
-<br>
 <div class="row p-3">
   <div class="col-6">
     <filter-dropdown [options]="options"></filter-dropdown>
   </div>
 </div>
-<div class="container">
-  <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows class="mat-elevation-z8">
+<div>
+  <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
 
     <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns, let i = index">
       <th mat-header-cell *matHeaderCellDef> {{displayedColumnValue[i]}} </th>
