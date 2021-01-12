@@ -4,7 +4,7 @@ import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {UserComponent} from './users-view-approval/component/user/user.component';
 import {UserViewComponent} from './users-view-approval/component/user-view/user-view.component';
 import {MatUiModule} from './mat-ui.module';
@@ -17,6 +17,7 @@ import {NgOtpInputModule} from 'ng-otp-input';
 import {SharedModule} from './users-view-approval/component/shared/shared.module';
 import {AppInitService} from './app-init.service';
 import {Router} from '@angular/router';
+import {TokenInterceptor} from './common/utils/TokenInterceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {Router} from '@angular/router';
   ],
   providers: [
     AppInitService,
-    {provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppInitService], multi: true}
+    {provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppInitService], multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
   ],
   bootstrap: [AppComponent],
   exports: []
@@ -58,8 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
-export function initializeApp(appInitService: AppInitService, route : Router) {
+export function initializeApp(appInitService: AppInitService, route: Router) {
   return (): Promise<any> => {
-      return appInitService.Init();
+    return appInitService.Init();
   };
 }

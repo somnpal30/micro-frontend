@@ -26,7 +26,7 @@ export class AppInitService {
         console.log('AppInitService Finished');
         //console.log(sessionStorage.getItem("accessToken"));
         sessionStorage.setItem('accessToken'
-          ,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTA0NTU3ODksImV4cCI6MTY0MTk5MTc4OSwiYXVkIjoid3d3LmNvbXZpdmEuY29tIiwic3ViIjoic29tbmF0aC5wYWwxQGNvbXZpdmEuY29tIiwiR2l2ZW5OYW1lIjoiSm9obm55IiwiU3VybmFtZSI6IlJvY2tldCIsIkVtYWlsIjoianJvY2tldEBleGFtcGxlLmNvbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.2CmNK2_l5qQFrPWtDH6d0g0UUyIcmBfIlzYUchlpPno');
+          ,environment.dummyToken);
         resolve();
       }, 100);
 

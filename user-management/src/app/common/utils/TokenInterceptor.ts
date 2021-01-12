@@ -7,6 +7,7 @@ import {SessionStorageService} from '../service/session-storage.service';
 export class TokenInterceptor  implements HttpInterceptor{
 
   constructor(private sessionStorage : SessionStorageService) { }
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.sessionStorage.get('accessToken');
     req = req.clone({
