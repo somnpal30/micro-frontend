@@ -13,9 +13,9 @@ const routes: Routes = [
   {path: '', redirectTo: '/user/approval', pathMatch: 'full'},
   {
     path: 'user', component: UserComponent, children: [
-      {path: 'myusers', component: UserSubmissionComponent},
+      {path: 'myusers', component: UserSubmissionComponent , canActivate: [AuthorizeGuard]},
       {path: 'approval', component: UserApprovalComponent, canActivate: [AuthorizeGuard]},
-      {path: 'view-details', component: UserViewComponent}
+      {path: 'view-details', component: UserViewComponent , canActivate: [AuthorizeGuard]}
     ]
   },
   {path: 'otp', component: OtpComponent},
