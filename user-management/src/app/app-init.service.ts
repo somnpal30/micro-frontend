@@ -1,16 +1,12 @@
 import {Inject, Injectable} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {CssloaderService} from './common/service/cssloader.service';
 import {DOCUMENT} from '@angular/common';
-import { environment } from '../environments/environment';
+import {environment} from '../environments/environment';
 
 // @ts-ignore
 @Injectable()
 export class AppInitService {
 
-  constructor(@Inject(DOCUMENT) private document,
-              public sanitizer: DomSanitizer,
-              private cssLoaderService: CssloaderService) {
+  constructor(@Inject(DOCUMENT) private document) {
   }
 
   Init() {
@@ -18,10 +14,10 @@ export class AppInitService {
       console.log('AppInitService.init() called');
 
       setTimeout(() => {
-        var head  = document.getElementsByTagName('head')[0];
-        var link  = document.createElement('link');
-        link.id   = "cssId";
-        link.rel  = 'stylesheet';
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.id = 'cssId';
+        link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = environment.cssStyle;
         link.media = 'all';

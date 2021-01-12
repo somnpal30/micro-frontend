@@ -8,5 +8,6 @@ export const environment = {
   //approval_list: 'https://api.mocklets.com/mock68117/approvals',
   approval_list: 'http://demo9262449.mockable.io/approvals',
   myuser_list: 'http://demo9262449.mockable.io/myusers',
-  cssStyle : 'http://localhost/global-styles.css'
+  // cssStyle : 'http://localhost/global-styles.css'
+  cssStyle :'https://spal012.s3.ap-south-1.amazonaws.com/global-styles.css'
 };
