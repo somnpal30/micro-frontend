@@ -14,9 +14,9 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {OtpComponent} from './view/otp/otp.component';
 import {NgOtpInputModule} from 'ng-otp-input';
-import {AuthzComponent} from './view/authz/authz.component';
 import {SharedModule} from './users-view-approval/component/shared/shared.module';
 import {AppInitService} from './app-init.service';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import {AppInitService} from './app-init.service';
   ],
   providers: [
     AppInitService,
-    {provide: APP_INITIALIZER,useFactory: initializeApp1, deps: [AppInitService], multi: true}
+    {provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppInitService], multi: true}
   ],
   bootstrap: [AppComponent],
   exports: []
@@ -57,8 +57,9 @@ export class AppModule {
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
-export function initializeApp1(appInitService: AppInitService) {
+
+export function initializeApp(appInitService: AppInitService, route : Router) {
   return (): Promise<any> => {
-    return appInitService.Init();
-  }
+      return appInitService.Init();
+  };
 }

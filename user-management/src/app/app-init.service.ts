@@ -19,10 +19,13 @@ export class AppInitService {
         link.id = 'cssId';
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = environment.cssStyle;
+        //link.href = environment.cssStyle;
+        link.href ="/assets/global-styles.css"
         link.media = 'all';
         head.appendChild(link);
         console.log('AppInitService Finished');
+        console.log(sessionStorage.getItem("accessToken"));
+
         resolve();
       }, 100);
 
