@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {environment} from '../environments/environment';
 import {CssloaderService} from './common/service/cssloader.service';
-import {TRUE_STR} from 'zone.js/lib/common/utils';
+
 
 // @ts-ignore
 @Injectable()
@@ -25,7 +25,7 @@ export class AppInitService {
               if(privilege.attributes){
                 sessionStorage.setItem(`${module_name}.${privilege.code}`, JSON.stringify(privilege.attributes));
               }else {
-                sessionStorage.setItem(`${module_name}.${privilege.code}`, TRUE_STR);
+                sessionStorage.setItem(`${module_name}.${privilege.code}`, "true");
               }
 
             })
