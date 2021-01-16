@@ -11,15 +11,6 @@
           "gatewayTypes": [
             "WEB",
             "USSD"
-          ],
-          "attributes": [
-            {
-              "attributeType": "LEVELS",
-              "attributeValue": [
-                "L1",
-                "L2"
-              ]
-            }
           ]
         }
       ]
@@ -79,6 +70,23 @@
               "attributeValue": [
                 "WHS",
                 "RT"
+              ]
+            }
+          ]
+        },
+        {
+          "code": "DeleteUsers",
+          "name": "DeleteUsers",
+          "gatewayTypes": [
+            "WEB",
+            "USSD"
+          ],
+          "attributes": [
+            {
+              "attributeType": "USER_TYPES",
+              "attributeValue": [
+                "Admin",
+                "Distributor"
               ]
             }
           ]

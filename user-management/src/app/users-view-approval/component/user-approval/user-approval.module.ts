@@ -7,12 +7,12 @@ import {AppModule} from '../../../app.module';
 
 @NgModule({
   declarations: [UserApprovalComponent],
-    imports: [
-        MatUiModule,
-        SharedModule,
-        TranslateModule,
+  imports: [
+    MatUiModule,
+    SharedModule,
+    TranslateModule,
 
-    ],
+  ],
   exports: [
     //UserApprovalComponent
   ]

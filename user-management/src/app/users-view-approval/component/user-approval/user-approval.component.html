@@ -61,16 +61,14 @@
     <ng-container matColumnDef="action">
       <mat-header-cell *matHeaderCellDef class="th-right"> {{displayedColumnValue[6]}} </mat-header-cell>
       <mat-cell *matCellDef="let element"  (click)="$event.stopPropagation()"  class="th-right">
-        <button mat-raised-button class="button-approve" (click)="approve(element.id)">{{displayedColumnValue[6] | uppercase}} </button>
+        <div><button mat-raised-button class="button-approve" (click)="approve(element.id)">{{displayedColumnValue[6] | uppercase}} </button></div>
       </mat-cell>
     </ng-container>
 
       <ng-container matColumnDef="action2">
         <mat-header-cell  *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center">
-          <app-authz role="admin">
+        <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center" appRoleAccess roles="{{element.submitted_by}}" privilege="DeleteUsers">
             <button mat-raised-button class="button-reject" (click)="reject(element.id)">{{displayedColumnValue[7] | uppercase}}</button>
-          </app-authz>
         </mat-cell>
       </ng-container>
 

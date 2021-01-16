@@ -20,7 +20,7 @@ html, body {
 
 .otpcontainer {
   /*width: 300px;*/
-  width : 40%;
+  width: 40%;
   height: 40%;
   padding-top: 40px;
   padding-left: 30px;
@@ -30,45 +30,50 @@ html, body {
 a {
   text-decoration: none !important;
 }
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: red !important;
 }
 
-.round-btn{
+.round-btn {
   border-radius: 25px !important;
 }
+
 .red-btn {
-  color : white;
+  color: white;
   background-color: #F02;
 }
-.grey-btn{
-  color : black;
+
+.grey-btn {
+  color: black;
   background-color: lightgray;
 }
 
 .otp-btn {
   border-radius: 25px !important;
-  color : white;
+  color: white;
   background-color: #F02;
   max-width: 25rem;
   left: 35%;
 }
-.otp-input
-{
-  border-radius : 25px !important;
+
+.otp-input {
+  border-radius: 25px !important;
 }
-.otp-input:focus
-{
-  border-radius : 25px !important;
+
+.otp-input:focus {
+  border-radius: 25px !important;
   outline: none !important;
-  border-width : 2px !important;
+  border-width: 2px !important;
   border-color: #0275d8 !important;
 }
+
 .font-weight-bold-selected {
- font-weight: bold;
- color: orangered;
+  font-weight: bold;
+  color: orangered;
 }
-table{
+
+table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -90,6 +95,7 @@ table{
   font-weight: normal;
 
 }
+
 .button-reject {
   border-radius: 25px !important;
   background-color: lightgray;
@@ -102,18 +108,21 @@ button:focus, button:active:focus, button.active:focus {
   outline: none !important;
   outline-style: none !important;
 }
+
 .header-align-right {
   display: flex;
   justify-content: flex-end;
 }
 
-.th-center{
+.th-center {
   text-align: center !important;;
 }
-.th-left{
+
+.th-left {
   text-align: left;
 }
-.th-right{
+
+.th-right {
   text-align: right !important;
 }
 
@@ -132,6 +141,7 @@ tr.mat-row:hover {
 th.mat-sort-header-sorted {
   color: black;
 }
+
 /*.mat-paginator-range-label {*/
 /*  display: none;*/
 /*}*/
@@ -139,7 +149,8 @@ th.mat-sort-header-sorted {
   background-color: #fbfbfb;
   width: 120px;
   border-radius: 7px;
- }
+}
+
 .float-right {
   horiz-align: right;
 }

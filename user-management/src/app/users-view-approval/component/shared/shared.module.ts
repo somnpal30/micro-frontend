@@ -7,12 +7,14 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AuthzComponent} from '../../../view/authz/authz.component';
 import {UnauthComponent} from '../../../view/unauth/unauth.component';
+import {RoleAccessDirective} from '../../../common/directive/roleaccess.directive';
 
 @NgModule({
-  declarations: [ConfirmationDialogComponent, FilterDropdownComponent, RejectionDialogComponent, AuthzComponent, UnauthComponent],
-  imports: [MatUiModule, FormsModule, CommonModule],
+  declarations: [ConfirmationDialogComponent, FilterDropdownComponent, RejectionDialogComponent, AuthzComponent, UnauthComponent, RoleAccessDirective],
+  imports: [MatUiModule, FormsModule, CommonModule  ],
   exports: [
-    FormsModule, CommonModule, ConfirmationDialogComponent, FilterDropdownComponent, RejectionDialogComponent, AuthzComponent, UnauthComponent
+    FormsModule, CommonModule, ConfirmationDialogComponent,
+    FilterDropdownComponent, RejectionDialogComponent, AuthzComponent, UnauthComponent, RoleAccessDirective
   ]
 })
 

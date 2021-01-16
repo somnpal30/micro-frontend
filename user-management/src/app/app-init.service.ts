@@ -17,20 +17,22 @@ export class AppInitService {
 
       this.cssloaderService.loadRoles().subscribe(
         result => {
-          //sessionStorage.setItem('roles',result);
+          // sessionStorage.setItem('roles',result);
           result.modules.forEach(module => {
-            //console.log(module.name.replace(/\s/g, "")  );
+            // console.log(module.name.replace(/\s/g, "")  );
             module.privileges.forEach(privilege => {
-              const module_name = module.name.replace(/\s/g, "")
-              if(privilege.attributes){
-                sessionStorage.setItem(`${module_name}.${privilege.code}`, JSON.stringify(privilege.attributes));
-              }else {
-                sessionStorage.setItem(`${module_name}.${privilege.code}`, "true");
+              const moduleName = module.name.replace(/\s/g, '_').toUpperCase();
+              if (privilege.attributes) {
+                sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, JSON.stringify(privilege.attributes));
+              } else {
+                sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, 'true');
               }
 
-            })
+            });
           });
-         // console.log(result.modules[2].name);
+
+
+          // console.log(result.modules[2].name);
         },
         error => {
         }

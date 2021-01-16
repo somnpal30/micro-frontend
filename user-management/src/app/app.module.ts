@@ -40,8 +40,6 @@ import {TokenInterceptor} from './common/utils/TokenInterceptor';
         deps: [HttpClient],
 
       },
-      //defaultLanguage: 'fr',
-      //useDefaultLang :true
     }),
     SharedModule
   ],
