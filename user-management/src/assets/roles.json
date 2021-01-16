@@ -1,0 +1,89 @@
+{
+  "code": "NWADM-160914-038896",
+  "name": "Netadmin authorization profile",
+  "modules": [
+    {
+      "name": "Approval Management",
+      "privileges": [
+        {
+          "code": "MOD_APPR",
+          "name": "Modification Approval",
+          "gatewayTypes": [
+            "WEB",
+            "USSD"
+          ],
+          "attributes": [
+            {
+              "attributeType": "LEVELS",
+              "attributeValue": [
+                "L1",
+                "L2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth Profile Management",
+      "privileges": [
+        {
+          "code": "CRT_AUTH_PROFILE",
+          "name": "Authorization Profile Creation",
+          "gatewayTypes": [
+            "WEB",
+            "USSD"
+          ],
+          "attributes": [
+            {
+              "attributeType": "USER_TYPES",
+              "attributeValue": [
+                "WHS",
+                "RT"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "privileges": [
+        {
+          "code": "Registration",
+          "name": "Registration",
+          "gatewayTypes": [
+            "WEB",
+            "USSD"
+          ],
+          "attributes": [
+          {
+            "attributeType": "USER_TYPES",
+            "attributeValue": [
+              "WHS",
+              "RT"
+            ]
+          }
+        ]
+        },
+        {
+          "code": "ModifyUsers",
+          "name": "ModifyUsers",
+          "gatewayTypes": [
+            "WEB",
+            "USSD"
+          ],
+          "attributes": [
+            {
+              "attributeType": "USER_TYPES",
+              "attributeValue": [
+                "WHS",
+                "RT"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
