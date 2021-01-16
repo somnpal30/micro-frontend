@@ -1,4 +1,4 @@
-import {Directive, Input, OnInit} from '@angular/core';
+import {Directive, Input, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
 import {environment} from '../../../environments/environment';
 
 @Directive({
@@ -6,15 +6,24 @@ import {environment} from '../../../environments/environment';
 })
 export class RoleAccessDirective implements OnInit {
 
-  @Input() roles: string[];
+  @Input() roles: string;
 
   @Input() privilege: string;
 
-  constructor() {
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) {
   }
 
   ngOnInit(): void {
-    console.log(`roles : ${this.roles} - privilege : ${this.privilege} - appName : ${environment.appName}`  );
+    console.log(`roles : ${this.roles} - privilege : ${this.privilege} - appName : ${environment.appName}`);
+
+    const display = this.roles === 'Admin';
+    if (display) {
+      this.vcRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.vcRef.clear();
+    }
+
+
   }
 
 }

@@ -67,8 +67,10 @@
 
       <ng-container matColumnDef="action2">
         <mat-header-cell  *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center" appRoleAccess roles="{{element.submitted_by}}" privilege="DeleteUsers">
+        <mat-cell *matCellDef="let element" (click)="$event.stopPropagation()"  class="th-center">
+          <ng-template appRoleAccess roles="{{element.submitted_by}}" privilege="DeleteUsers">
             <button mat-raised-button class="button-reject" (click)="reject(element.id)">{{displayedColumnValue[7] | uppercase}}</button>
+          </ng-template>
         </mat-cell>
       </ng-container>
 
