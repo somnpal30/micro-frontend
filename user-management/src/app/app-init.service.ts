@@ -22,12 +22,12 @@ export class AppInitService {
             // console.log(module.name.replace(/\s/g, "")  );
             module.privileges.forEach(privilege => {
               const moduleName = module.name.replace(/\s/g, '_').toUpperCase();
-              if (privilege.attributes) {
-                sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, JSON.stringify(privilege.attributes));
-              } else {
-                sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, 'true');
-              }
-
+              /*  if (privilege.attributes) {
+                  sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, JSON.stringify(privilege.attributes));
+                } else {
+                  sessionStorage.setItem(`${moduleName}.${privilege.code.toUpperCase()}`, 'true');
+                }*/
+              sessionStorage.setItem(moduleName, JSON.stringify( module.privileges));
             });
           });
 

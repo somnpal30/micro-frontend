@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 declare var Luigi: any;
 
-declare function loadLuigi(): any;
+declare var loadLuigi: any;
 
 @Component({
   selector: 'app-luigi',

@@ -1,6 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {LuigiContextService} from '@luigi-project/client-support-angular';
 
+declare var LuigiClient: any;
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
@@ -14,7 +15,14 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.contextService)
+    console.log(LuigiClient.getContext())
+
+    LuigiClient.addInitListener(initialContext => {
+      this.title = initialContext.title;
+      this.content = initialContext.content;
+      console.log(this.title + + this.content);
+      this.ref.detectChanges();
+    });
 
     /*addInitListener(initialContext => {
       this.title = initialContext.title;

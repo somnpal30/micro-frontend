@@ -1,4 +1,4 @@
-loadLuigi = () => {
+function loadLuigi(){
   Luigi.setConfig({
     navigation: {
       nodes: [
@@ -73,6 +73,10 @@ loadLuigi = () => {
 
 loadLuigiPostLogin = (name,email) => {
   console.log(Luigi.getConfig())
+  Luigi.customMessages().sendToAll({
+    id : 'token',
+    dataField1: 'xxx'
+  });
   Luigi.setConfig({
     navigation: {
       nodes: [
@@ -88,7 +92,50 @@ loadLuigiPostLogin = (name,email) => {
               viewUrl: "/overview",
               loadingIndicator: {
                 enabled: false
+              },
+              context: {
+                title: 'Welcome to Luigi POC!',
+                content: 'Play around with your Luigi configuration Here'
               }
+            },
+            {
+              "pathSegment": "channel",
+              "label": "Add Channel User",
+              "category": {
+                "label": "Channel User Management",
+                "icon": "account",
+                "collapsible": true
+              },
+              "loadingIndicator": {
+                "enabled": false
+              },
+              "viewUrl": "http://localhost:8080/CoreWeb/channel/add1_addChannelUser.action"
+            },
+            {
+              "pathSegment": "preference",
+              "label": "System Preference",
+              "category": {
+                "label": "Preference",
+                "icon": "customize",
+                "collapsible": true
+              },
+              "loadingIndicator": {
+                "enabled": false
+              },
+              "viewUrl": "main"
+            },
+            {
+              "pathSegment": "stock",
+              "label": "Stock Initiate",
+              "category": {
+                "label": "Stock Management",
+                "icon": "product",
+                "collapsible": true
+              },
+              "loadingIndicator": {
+                "enabled": false
+              },
+              "viewUrl": "http://localhost:8080/CoreWeb/stock/stockInit_input.action"
             }
           ]
         }

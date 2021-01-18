@@ -1,11 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
+
+.fd-button.fd-shellbar__button {
+  background-repeat: repeat !important;
+  border-radius: 50%;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color : #F5F8FC;
+  background-color: #F5F8FC;
 }
-
 
 
 #app {
@@ -17,10 +25,10 @@ body {
 
 :root {
 
-  --sapBrandColor: #0a6ed1;
-  --sapHighlightColor: #0854a0;
-  --sapBaseColor: #fff;
-  --sapShellColor: #0854a0 !important;
+  --sapBrandColor: #fff !important;
+  --sapHighlightColor: #fff !important;
+  --sapBaseColor: #fff !important;
+  --sapShellColor: #fff !important;
   --sapContent_IconColor: #F02 !important;
   --sapList_Active_Background: #F02 !important;
   --sapList_Hover_SelectionBackground: #ffcccb !important;
@@ -507,11 +515,16 @@ body {
   background-image: var(--sapShell_BackgroundImage) !important;
 }
 
-/*
+
 .fd-nested-list__link {
-  color: #ffba10 !important;
+  color: transparent !important;
+}
+.fd-nested-list__title {
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: bold !important;
 }
 
+/*
 .fd-nested-list__link .is-selected {
   color: #ffba10 !important;
 }
