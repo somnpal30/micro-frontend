@@ -1,26 +1,21 @@
-<div style="padding-left: 10px;">
-  <p-overlayPanel #op [showCloseIcon]="false" [style]="{width: '600px'}">
-    <p class="font-bold">Category</p>
-    <div class="p-grid">
-    <!--  <div class="p-col" *ngFor="let workspace of workspaceCategoryDetails">
-        <p class="font-bold">{{workspace.workspaceName}}</p>
-          <div *ngFor="let category of workspace.categories" class="p-field-checkbox">
-            <p-checkbox name="group1" value="{{category.categoryName}}"  inputId="{{category.categoryId}}"></p-checkbox>
-            <label class="font-bold">{{category.categoryName}}</label>
-          </div>
-      </div>-->
-      <div class="p-col-12" *ngFor="let workspace of workspaceCategoryDetails">
-        <p class="font-bold">{{workspace.workspaceName}}</p>
-        <div class="p-grid">
-          <div class="p-col p-field-checkbox" *ngFor="let category of workspace.categories">
-            <p-checkbox name="group1" value="{{category.categoryName}}"  inputId="{{category.categoryId}}"></p-checkbox>
-            <label class="font-bold">{{category.categoryName}}</label>
-          </div>
-
-        </div>
+<div class="container-sm">
+  <p-overlayPanel #op [showCloseIcon]="false" [style]="{width: '800px'}">
+    <div class="row">
+      <div class="col-11 font-bold">Category</div>
+      <div class="col-1 font-bold"><i class="pi pi-times "></i></div>
+    </div>
+    <p-divider></p-divider>
+    <div class="row" *ngFor="let workspace of workspaceCategoryDetails" style="background-color: #FBFBFB ;padding-left: 1rem !important; padding-bottom: 1rem !important; ">
+      <div class="col-12 font-bold" style="padding: .5rem">{{workspace.workspaceName}}</div>
+      <div class="col-2 font-bold" *ngFor="let category of workspace.categories">
+        <input class="form-check-input" type="checkbox" value="{{category.categoryId}}" id="{{category.categoryId}}">
+        <label class="form-check-label" for="{{category.categoryId}}">
+          {{category.categoryName}}
+        </label>
       </div>
     </div>
-
+    <div class="row">
+    </div>
   </p-overlayPanel>
 
   <button type="button" pButton label="Filters" icon="pi pi-filter" class="btn-grey font-bold"
