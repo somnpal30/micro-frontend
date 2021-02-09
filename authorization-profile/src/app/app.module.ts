@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {DividerModule} from 'primeng/divider';
 import {CheckboxModule} from 'primeng/checkbox';
+import {TableModule} from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     ButtonModule,
     OverlayPanelModule,
     DividerModule,
-    CheckboxModule
+    CheckboxModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

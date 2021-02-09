@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RemoteDataService} from "../../service/remote-data.service";
+import {AuthorizationProfile} from "../../model/authorizationProfileList";
 
 @Component({
   selector: 'app-data-table',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataTableComponent implements OnInit {
 
-  constructor() { }
+  authorizationProfiles: AuthorizationProfile[] = [];
+
+  constructor(private remoteService: RemoteDataService) {
+  }
 
   ngOnInit(): void {
+    this.remoteService.loadAuthorizationProfileList().subscribe(resp => {
+      this.authorizationProfiles = resp.authorizationProfiles;
+      console.log(this.authorizationProfiles);
+    }, error => {
+    })
   }
 
 }

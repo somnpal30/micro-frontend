@@ -45,3 +45,33 @@ body {
   font-weight: 700 !important;
   color: #727270;
 }
+body .ui-table .ui-table-tbody > tr > td {
+  border: 0 none;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  border-radius : 0 !important;
+  min-width: 2rem !important;
+  height: 2rem !important;
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.p-paginator .p-paginator-current {
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+.p-paginator .p-dropdown .p-dropdown-label {
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.disabled {
+  color: #E0E0E0;
+}
+.enabled {
+  color: #727270;
+}
