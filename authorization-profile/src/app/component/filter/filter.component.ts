@@ -10,20 +10,36 @@ import {WorkspaceDetails} from "../../model/workspace";
 export class FilterComponent implements OnInit {
 
   workspaceCategoryDetails: WorkspaceDetails[] = [];
-
+  selectedValues: string[]= [] ;
+  badgeCounter:number = 0
   constructor(private remoteService: RemoteDataService) {
   }
 
   ngOnInit(): void {
+
     this.remoteService.loadWorkspace().subscribe(
       resp => {
-        console.log(resp)
+        //console.log(resp)
         this.workspaceCategoryDetails = resp?.workspaceCategoryDetails.sort( (o1,o2) => (o1.workspaceName > o2.workspaceName ? 1: -1) );
       },
       error => {
         console.error(error)
       }
     );
+  }
+
+  traceClick(){
+    //console.log(val);
+    console.log(this.selectedValues)
+  }
+
+  clearFilter() {
+    this.selectedValues = [];
+    this.badgeCounter = 0;
+  }
+
+  applyFilter() {
+    this.badgeCounter = this.selectedValues.length;
   }
 
 }

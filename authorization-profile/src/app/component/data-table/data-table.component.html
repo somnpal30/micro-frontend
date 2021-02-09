@@ -1,9 +1,13 @@
 <div class="card">
   <p-table [value]="authorizationProfiles" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-           [rowsPerPageOptions]="[5,10,25]">
+           [rowsPerPageOptions]="[5,10,25]"  selectionMode="single" dataKey="code"
+           (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
     <ng-template pTemplate="header">
       <tr class="font-bold">
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
         <th pSortableColumn="profilename">PROFILE NAME
           <p-sortIcon field="profilename"></p-sortIcon>
         </th>
@@ -17,6 +21,9 @@
     </ng-template>
     <ng-template pTemplate="body" let-authorizationProfile>
       <tr class="font-bold">
+        <td>
+          <p-tableCheckbox  [value]="authorizationProfile"></p-tableCheckbox>
+        </td>
         <td>{{authorizationProfile.name}}</td>
         <td>{{authorizationProfile.categoryName}}</td>
         <td>{{authorizationProfile.type}}</td>

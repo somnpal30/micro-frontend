@@ -17,9 +17,16 @@ export class DataTableComponent implements OnInit {
   ngOnInit(): void {
     this.remoteService.loadAuthorizationProfileList().subscribe(resp => {
       this.authorizationProfiles = resp.authorizationProfiles;
-      console.log(this.authorizationProfiles);
+      //console.log(this.authorizationProfiles);
     }, error => {
     })
+  }
+
+  onRowSelect(eve : Event){
+    console.log(eve)
+  }
+  onRowUnselect(eve : Event){
+
   }
 
 }

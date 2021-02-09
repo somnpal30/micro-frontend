@@ -13,6 +13,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {DividerModule} from 'primeng/divider';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
+import {BadgeModule} from 'primeng/badge';
+import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import {TableModule} from 'primeng/table';
     DividerModule,
     CheckboxModule,
     TableModule,
+    BadgeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
