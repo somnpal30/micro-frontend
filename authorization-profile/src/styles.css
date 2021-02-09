@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #E8EEF6;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
+}
+
+.page-header {
+  font-family: Nunito Sans;
+  font-weight: bold;
+  font-size: 18px;
+  color: #727270;
+}
+
+.container {
+  background-color: #FFFFFF;
+  font-family: Nunito Sans;
+  font-weight: bold;
+  font-size: 15px;
+  color: #7A7A7A;
+  /*  padding-top: 10px;*/
+
+}
+
+.btn-red {
+  color: #FFFFFF !important;
+  background-color: #F02 !important;
+  /* width : 150px !important;*/
+  font-size: 13px !important;
+  font-family: Nunito Sans !important;
+}
+
+.btn-grey {
+  color: #7A7A7A !important;
+  background-color: #FBFBFB !important;
+  width: 100px !important;
+
+}
+
+
+.font-bold {
+  font-size: 12px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 700 !important;
+}

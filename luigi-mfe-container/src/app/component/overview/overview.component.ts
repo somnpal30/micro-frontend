@@ -1,7 +1,8 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {LuigiContextService} from '@luigi-project/client-support-angular';
 
-declare var LuigiClient: any;
+import * as LuigiClient from '@luigi-project/client';
+
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
@@ -11,16 +12,19 @@ export class OverviewComponent implements OnInit {
   title: string;
   content: string;
 
-  constructor(private ref: ChangeDetectorRef, private contextService: LuigiContextService) {}
+  constructor(private ref: ChangeDetectorRef, private contextService: LuigiContextService) {
+  }
 
   ngOnInit(): void {
+    /*    LuigiClient.addCustomMessageListener('myprefix.my-custom-message-for-client'
+          , (data) => console.log(data));*/
 
-    console.log(LuigiClient.getContext())
+    console.log(LuigiClient.getToken());
 
     LuigiClient.addInitListener(initialContext => {
       this.title = initialContext.title;
       this.content = initialContext.content;
-      console.log(this.title + + this.content);
+      console.log(this.title + " : " + this.content);
       this.ref.detectChanges();
     });
 
@@ -30,6 +34,7 @@ export class OverviewComponent implements OnInit {
       this.ref.detectChanges();
     });*/
   }
-    // this.title = "testing..."
+
+  // this.title = "testing..."
 
 }

@@ -1,0 +1,28 @@
+<div style="padding-left: 10px;">
+  <p-overlayPanel #op [showCloseIcon]="false" [style]="{width: '600px'}">
+    <p class="font-bold">Category</p>
+    <div class="p-grid">
+    <!--  <div class="p-col" *ngFor="let workspace of workspaceCategoryDetails">
+        <p class="font-bold">{{workspace.workspaceName}}</p>
+          <div *ngFor="let category of workspace.categories" class="p-field-checkbox">
+            <p-checkbox name="group1" value="{{category.categoryName}}"  inputId="{{category.categoryId}}"></p-checkbox>
+            <label class="font-bold">{{category.categoryName}}</label>
+          </div>
+      </div>-->
+      <div class="p-col-12" *ngFor="let workspace of workspaceCategoryDetails">
+        <p class="font-bold">{{workspace.workspaceName}}</p>
+        <div class="p-grid">
+          <div class="p-col p-field-checkbox" *ngFor="let category of workspace.categories">
+            <p-checkbox name="group1" value="{{category.categoryName}}"  inputId="{{category.categoryId}}"></p-checkbox>
+            <label class="font-bold">{{category.categoryName}}</label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </p-overlayPanel>
+
+  <button type="button" pButton label="Filters" icon="pi pi-filter" class="btn-grey font-bold"
+          (click)="op.toggle($event)"></button>
+</div>
