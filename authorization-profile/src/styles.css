@@ -39,7 +39,13 @@ body {
   /*width: 100px !important;*/
 
 }
+.btn-filter {
+  color: #007bff !important;
+  border-color:  #FBFBFB !important;
+  background-color: #FBFBFB !important;
+  /*width: 100px !important;*/
 
+}
 
 .font-bold {
   font-size: 13px !important;

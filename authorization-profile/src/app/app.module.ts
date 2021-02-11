@@ -15,12 +15,20 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
 import {BadgeModule} from 'primeng/badge';
 import {FormsModule} from "@angular/forms";
+import { AddProfileComponent } from './view/add-profile/add-profile.component';
+import { UserSelectionComponent } from './component/user-selection/user-selection.component';
+import { SetProfileComponent } from './component/set-profile/set-profile.component';
+import { AuthorizationComponent } from './component/authorization/authorization.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthorizationProfileListComponent,
     DataTableComponent,
     FilterComponent,
+    AddProfileComponent,
+    UserSelectionComponent,
+    SetProfileComponent,
+    AuthorizationComponent,
 
   ],
   imports: [
