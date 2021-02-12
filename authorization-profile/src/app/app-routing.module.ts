@@ -6,7 +6,7 @@ import {AddProfileComponent} from "./view/add-profile/add-profile.component";
 const routes: Routes = [
   { path: '',   redirectTo: '/authorization-profile-list', pathMatch: 'full' },
   { path: 'authorization-profile-list', component: AuthorizationProfileListComponent },
-  { path: 'add-profile', component: AddProfileComponent},
+  { path: 'authorization-profile', component: AddProfileComponent},
   {path: '**', component: AuthorizationProfileListComponent}
 ];
 

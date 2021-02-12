@@ -14,6 +14,6 @@ export class AuthorizationProfileListComponent implements OnInit {
   }
 
   navigateToAddProfile(){
-    this.router.navigate(['../add-profile']);
+    this.router.navigate(['../authorization-profile']);
   }
 }

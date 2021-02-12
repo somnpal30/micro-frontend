@@ -14,11 +14,14 @@ import {DividerModule} from 'primeng/divider';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
 import {BadgeModule} from 'primeng/badge';
+import {TabViewModule} from 'primeng/tabview';
+import {RadioButtonModule} from 'primeng/radiobutton';
 import {FormsModule} from "@angular/forms";
-import { AddProfileComponent } from './view/add-profile/add-profile.component';
-import { UserSelectionComponent } from './component/user-selection/user-selection.component';
-import { SetProfileComponent } from './component/set-profile/set-profile.component';
-import { AuthorizationComponent } from './component/authorization/authorization.component';
+import {AddProfileComponent} from './view/add-profile/add-profile.component';
+import {UserSelectionComponent} from './component/user-selection/user-selection.component';
+import {SetProfileComponent} from './component/set-profile/set-profile.component';
+import {AuthorizationComponent} from './component/authorization/authorization.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { AuthorizationComponent } from './component/authorization/authorization.
     CheckboxModule,
     TableModule,
     BadgeModule,
-    FormsModule
+    FormsModule,
+    TabViewModule,
+    RadioButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

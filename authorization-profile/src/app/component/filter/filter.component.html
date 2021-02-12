@@ -16,14 +16,19 @@
         </div>
       </div>
     </div>
-   <p-divider></p-divider>
+    <p-divider></p-divider>
     <div class="row">
-      <div class="col-2 font-bold"> <p-button styleClass="btn-grey" label="CLEAR" (click)="clearFilter()"></p-button></div>
+      <div class="col-2 font-bold">
+        <p-button styleClass="btn-grey" label="CLEAR" (click)="clearFilter()"></p-button>
+      </div>
       <div class="col-8"></div>
-      <div class="col-2 font-bold"><p-button styleClass="btn-grey" label="APPLY" (click)="applyFilter(); op.hide()"></p-button></div>
+      <div class="col-2 font-bold">
+        <p-button styleClass="btn-grey" label="APPLY" (click)="applyFilter(); op.hide()"></p-button>
+      </div>
     </div>
   </p-overlayPanel>
 
-  <p-button styleClass="btn-filter font-bold" label="Filters" icon="pi pi-filter" badge="{{badgeCounter}}" badgeClass="p-badge-info"
+  <p-button styleClass="btn-filter font-bold" label="Filters" icon="pi pi-filter" badge="{{badgeCounter}}"
+            badgeClass="p-badge-info"
             (click)="op.show($event); showSelectedValue()"></p-button>
 </div>

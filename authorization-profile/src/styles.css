@@ -108,4 +108,15 @@ body .ui-table .ui-table-tbody > tr > td {
   color: #727270;
 }
 
+.nav-unselect {
+  background-color: #FBFBFB;
+  color: #E0E0E0;
+  margin-left: 3px;
+}
+.nav-select {
+  background-color: #FF0022;
+  color: #FFF;
+  margin-left: 3px;
+}
+
 
