@@ -137,3 +137,7 @@ body .ui-table .ui-table-tbody > tr > td {
   background: #007bff !important;
   border: none !important;
 }
+
+.p-listbox{
+  border: 0 !important;
+}

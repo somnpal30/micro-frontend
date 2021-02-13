@@ -19,6 +19,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextModule} from 'primeng/inputtext';
 import {ListboxModule} from 'primeng/listbox';
 import {FormsModule} from "@angular/forms";
+import {AccordionModule} from 'primeng/accordion';
 import {AddProfileComponent} from './view/add-profile/add-profile.component';
 import {UserSelectionComponent} from './component/user-selection/user-selection.component';
 import {SetProfileComponent} from './component/set-profile/set-profile.component';
@@ -52,7 +53,8 @@ import {FilterPipe} from "./utils/FilterPipe";
     RadioButtonModule,
     InputTextModule,
     ScrollPanelModule,
-    ListboxModule
+    ListboxModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

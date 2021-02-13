@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RemoteDataService} from "../../service/remote-data.service";
-import {Module, ModuleAndServices} from "../../model/moduleAndServices";
+import {Module, ModuleAndServices, Privilege} from "../../model/moduleAndServices";
+import {Channel} from "../../model/serviceDetails";
 
 @Component({
   selector: 'app-authorization',
@@ -9,25 +10,16 @@ import {Module, ModuleAndServices} from "../../model/moduleAndServices";
 })
 export class AuthorizationComponent implements OnInit {
 
-  public moduleAndServiceCol: ModuleAndServices | undefined;
+  public moduleAndServiceCol: ModuleAndServices | any;
   public modules: Module[] = [];
-  countries: Country[];
-  selectedCountry: Country | undefined;
-  searchText:string|undefined
+  public privileges: Privilege[];
+  public channels: Channel[];
+  selectedModule: Module | any;
+  selectedPrivilege: Privilege | any;
 
   constructor(private remoteService: RemoteDataService) {
-    this.countries = [
-      {name: 'Australia', code: 'AU'},
-      {name: 'Brazil', code: 'BR'},
-      {name: 'China', code: 'CN'},
-      {name: 'Egypt', code: 'EG'},
-      {name: 'France', code: 'FR'},
-      {name: 'Germany', code: 'DE'},
-      {name: 'India', code: 'IN'},
-      {name: 'Japan', code: 'JP'},
-      {name: 'Spain', code: 'ES'},
-      {name: 'United States', code: 'US'}
-    ];
+    this.privileges = [];
+    this.channels = [];
 
   }
 
@@ -35,14 +27,23 @@ export class AuthorizationComponent implements OnInit {
     this.remoteService.loadModuleAndServiceDetails().subscribe(resp => {
       this.moduleAndServiceCol = resp;
       this.modules = this.moduleAndServiceCol.modules;
-      console.log(this.modules);
     }, error => {
     })
   }
 
+  displayService() {
+    this.privileges = this.selectedModule.privileges
+  }
+
+  displayServiceDetails() {
+    if (this.channels.length === 0) {
+      this.remoteService.loadChannel().subscribe(resp => {
+        this.channels = resp.channels;
+
+      })
+    }
+
+  }
 }
 
-interface Country {
-  name: string,
-  code: string
-}
+

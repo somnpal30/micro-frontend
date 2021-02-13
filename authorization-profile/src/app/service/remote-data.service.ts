@@ -4,6 +4,7 @@ import {Workspace} from "../model/workspace";
 import {Observable} from "rxjs";
 import {AuthorizationProfileList} from "../model/authorizationProfileList";
 import {ModuleAndServices} from "../model/moduleAndServices";
+import {ServiceDetails} from "../model/serviceDetails";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class RemoteDataService {
 
   loadModuleAndServiceDetails():Observable<ModuleAndServices>{
     return this.httpClient.get<ModuleAndServices>("/assets/data/headmerchant.json")
+  }
+
+  loadChannel():Observable<ServiceDetails>{
+    return this.httpClient.get<ServiceDetails>("/assets/data/catalogue/channel.json")
   }
 
 }
