@@ -14,14 +14,17 @@ import {DividerModule} from 'primeng/divider';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
 import {BadgeModule} from 'primeng/badge';
-import {TabViewModule} from 'primeng/tabview';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextModule} from 'primeng/inputtext';
+import {ListboxModule} from 'primeng/listbox';
 import {FormsModule} from "@angular/forms";
 import {AddProfileComponent} from './view/add-profile/add-profile.component';
 import {UserSelectionComponent} from './component/user-selection/user-selection.component';
 import {SetProfileComponent} from './component/set-profile/set-profile.component';
 import {AuthorizationComponent} from './component/authorization/authorization.component';
 
+import {FilterPipe} from "./utils/FilterPipe";
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,7 @@ import {AuthorizationComponent} from './component/authorization/authorization.co
     UserSelectionComponent,
     SetProfileComponent,
     AuthorizationComponent,
-
+    FilterPipe,
   ],
   imports: [
     HttpClientModule,
@@ -46,8 +49,10 @@ import {AuthorizationComponent} from './component/authorization/authorization.co
     TableModule,
     BadgeModule,
     FormsModule,
-    TabViewModule,
-    RadioButtonModule
+    RadioButtonModule,
+    InputTextModule,
+    ScrollPanelModule,
+    ListboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
