@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RemoteDataService} from "../../service/remote-data.service";
 import {Module, ModuleAndServices, Privilege} from "../../model/moduleAndServices";
-import {Channel} from "../../model/serviceDetails";
+import {Attribute} from "../../model/serviceDetails";
+import {WorkspaceDetails} from "../../model/workspace";
 
 @Component({
   selector: 'app-authorization',
@@ -13,13 +14,16 @@ export class AuthorizationComponent implements OnInit {
   public moduleAndServiceCol: ModuleAndServices | any;
   public modules: Module[] = [];
   public privileges: Privilege[];
-  public channels: Channel[];
+  public channels: Attribute[];
+  public levels: Attribute[];
+  public workspaceDetails: WorkspaceDetails[] = []
   selectedModule: Module | any;
   selectedPrivilege: Privilege | any;
 
   constructor(private remoteService: RemoteDataService) {
     this.privileges = [];
     this.channels = [];
+    this.levels = [];
 
   }
 
@@ -33,16 +37,49 @@ export class AuthorizationComponent implements OnInit {
 
   displayService() {
     this.privileges = this.selectedModule.privileges
+    this.resetServiceDetails();
+  }
+
+  resetServiceDetails() {
+    this.workspaceDetails = [];
+    this.levels = [];
   }
 
   displayServiceDetails() {
+
     if (this.channels.length === 0) {
       this.remoteService.loadChannel().subscribe(resp => {
         this.channels = resp.channels;
-
       })
     }
 
+
+    this.selectedPrivilege.attributes?.forEach((value: any) => {
+      if ("USER_TYPES" === value) {
+        this.remoteService.loadWorkspace().subscribe(
+          resp => {
+            //console.log(resp)
+            this.workspaceDetails
+              = resp?.workspaceCategoryDetails.sort((o1, o2) => (o1.workspaceName > o2.workspaceName ? 1 : -1));
+
+          },
+          error => {
+            console.error(error)
+          }
+        );
+      } else {
+        this.workspaceDetails = [];
+      }
+
+      if ("LEVELS" === value) {
+        this.remoteService.loadLevel().subscribe(resp => {
+          this.levels = resp.levels;
+          console.log(resp);
+        })
+      } else {
+        this.levels = [];
+      }
+    })
   }
 }
 

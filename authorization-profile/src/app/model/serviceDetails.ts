@@ -1,8 +1,9 @@
 export interface ServiceDetails {
-  channels: Channel[]
+  channels: Attribute[],
+  levels : Attribute[],
 }
 
-export interface Channel {
+export interface Attribute {
   code: string;
   name: string;
 }

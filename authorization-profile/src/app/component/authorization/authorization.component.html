@@ -2,23 +2,25 @@
   <div class="row" style="margin-right: 1rem !important;">
     <div class="col-3">
       <div class="col" style="padding-bottom: 1em;">Modules&nbsp;({{modules.length}})</div>
-      <p-scrollPanel [style]="{width: '100%', height: '240px'}">
-        <p-listbox [options]="modules" [(ngModel)]="selectedModule" optionLabel="name" [filter]="true"
-                   (onClick)="displayService()"
-        ></p-listbox>
-      </p-scrollPanel>
+      <!--<p-scrollPanel [style]="{width: '100%', height: '240px'}">-->
+      <p-listbox [options]="modules" [(ngModel)]="selectedModule" optionLabel="name" [filter]="true"
+                 (onClick)="displayService()" [listStyle]="{'max-height':'250px'}"
+      ></p-listbox>
+      <!-- </p-scrollPanel>-->
     </div>
     <p-divider layout="vertical"></p-divider>
     <div class="col-3">
-      <div class="row" style="padding-bottom: 1em;">Services&nbsp;<span *ngIf="privileges && privileges.length>0"> ({{privileges?.length}})</span>
+      <div class="row" style="padding-bottom: 1em;">Services&nbsp;<span
+        *ngIf="privileges && privileges.length>0"> ({{privileges?.length}})</span>
       </div>
       <p-scrollPanel [style]="{width: '100%', height: '240px'}">
-        <p-listbox [options]="privileges" [(ngModel)]="selectedPrivilege" optionLabel="name" (onClick)="displayServiceDetails()"
+        <p-listbox [options]="privileges" [(ngModel)]="selectedPrivilege" optionLabel="name"
+                   (onClick)="displayServiceDetails()"
                    [filter]="true"></p-listbox>
       </p-scrollPanel>
     </div>
     <p-divider layout="vertical"></p-divider>
-    <div class="col-5">
+    <div class="col-5" >
       <div class="row" style="padding-bottom: 1em;">Set Service Preferences</div>
       <div class="row">Channels Allowed</div>
       <div class="row">
@@ -29,8 +31,39 @@
           </div>
         </div>
       </div>
-      <p-divider></p-divider>
-      <div class="row">Users Allowed</div>
+
+      <div *ngIf="workspaceDetails.length>0">
+        <p-divider></p-divider>
+        <div class="row">Users Allowed</div>
+        <div *ngFor="let workspace of workspaceDetails">
+          <div class="row">
+            {{workspace.workspaceName}}
+          </div>
+          <div class="row">
+            <div class="col-3 font-bold-12" *ngFor="let c of workspace.categories">
+              <div class="p-field-checkbox">
+                <p-checkbox name="group1" value="{{c.categoryId}}" inputId="{{c.categoryId}}"></p-checkbox>
+                <label> {{c.categoryName}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf="levels.length>0">
+        <p-divider></p-divider>
+        <div class="row">Levels</div>
+        <div class="row">
+          <div class="col-2 font-bold-12" *ngFor="let c of levels">
+            <div class="p-field-checkbox">
+              <p-checkbox name="group1" value="{{c.code}}" inputId="{{c.code}}"></p-checkbox>
+              <label> {{c.name}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -26,6 +26,7 @@ import {SetProfileComponent} from './component/set-profile/set-profile.component
 import {AuthorizationComponent} from './component/authorization/authorization.component';
 
 import {FilterPipe} from "./utils/FilterPipe";
+import { FilterListComponent } from './component/filter-list/filter-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import {FilterPipe} from "./utils/FilterPipe";
     SetProfileComponent,
     AuthorizationComponent,
     FilterPipe,
+    FilterListComponent,
   ],
   imports: [
     HttpClientModule,
