@@ -1,3 +1,4 @@
+
 function loadLuigi() {
   Luigi.setConfig({
     navigation: {

@@ -35,7 +35,8 @@ export class AuthorizationComponent implements OnInit {
     })
   }
 
-  displayService() {
+  displayService(event:Event) {
+    this.selectedModule = event;
     this.privileges = this.selectedModule.privileges
     this.resetServiceDetails();
   }
@@ -45,8 +46,8 @@ export class AuthorizationComponent implements OnInit {
     this.levels = [];
   }
 
-  displayServiceDetails() {
-
+  displayServiceDetails(event:Event) {
+    this.selectedPrivilege = event
     if (this.channels.length === 0) {
       this.remoteService.loadChannel().subscribe(resp => {
         this.channels = resp.channels;

@@ -24,6 +24,7 @@ export class OverviewComponent implements OnInit {
     LuigiClient.addInitListener(initialContext => {
       this.title = initialContext.title;
       this.content = initialContext.content;
+      console.log(initialContext);
       console.log(this.title + " : " + this.content);
       this.ref.detectChanges();
     });

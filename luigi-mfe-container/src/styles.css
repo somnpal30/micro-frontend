@@ -12,12 +12,12 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #F5F8FC;
+  #background-color: #F5F8FC;
 }
 
 
 #app {
-  background-color: #fff !important;
+  #background-color: #fff !important;
   border-color: #FF0022 !important;
   box-sizing: unset !important;
 }
@@ -53,7 +53,7 @@ body {
 :root {
   --sapBrandColor: #fff !important;
   --sapBaseColor: #fff !important;
-  --sapShellColor: #fff !important;
+  --sapShellColor: #ebeae7 !important;
   --sapContent_IconColor: #7A7A7A !important;
   --sapList_Active_Background: #F02 !important;
   --sapList_SelectionBackgroundColor : #FFF8F8 !important;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-filter-list',
@@ -7,11 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterListComponent implements OnInit {
 
-  @Input label:string;
+  @Input() label: string;
+  @Input() dataCol: any[];
+  @Output() selectedDataEvent = new EventEmitter<any>();
 
-  constructor() { }
+  selectedData: any;
+
+  constructor() {
+    this.label = "";
+    this.dataCol = [];
+  }
 
   ngOnInit(): void {
+  }
+
+  displayData() {
+    this.selectedDataEvent.emit(this.selectedData);
   }
 
 }
