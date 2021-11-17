@@ -30,22 +30,24 @@ function loadLuigi() {
               "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTAwNzUzMjEsImV4cCI6MTY0MTYxMTMyMSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IlN0ZXZlIiwiU3VybmFtZSI6IlJvZ2VyIiwiRW1haWwiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.T2DjDlQLYNBac26WQfh7vtBkAax8RtQwkSG4VtXSjB0",
             scope: "email profile",
           };
-          console.log("Luigi.auth().isAuthorizationEnabled()" + Luigi.auth().isAuthorizationEnabled());
+
           Luigi.auth().store.setAuthData(data);
+          Luigi.auth().store.setNewlyAuthorized();
           Luigi.auth().handleAuthEvent(
             'onAuthSuccessful',
             '',
             '',
             ''
           );
-        /*  Luigi.auth().handleAuthEvent(
-            "onAuthSuccessful",
-            "res.myProviderConfig",
-            data,
-            "/luigi#/home"
-          );*/
+          /*  Luigi.auth().handleAuthEvent(
+              "onAuthSuccessful",
+              "res.myProviderConfig",
+              data,
+              "/luigi#/home"
+            );*/
 
-          //Luigi.auth().store.setNewlyAuthorized();
+          //
+
           Luigi.auth().login();
         },
       },
@@ -61,11 +63,13 @@ function loadLuigi() {
         onAuthError: (settings, err) => {
           console.log("onAuthError");
         },
-        onAuthExpired: (settings) => {},
+        onAuthExpired: (settings) => {
+        },
         onLogout: (settings) => {
           console.log("logout event..");
         },
-        onAuthExpireSoon: (settings) => {},
+        onAuthExpireSoon: (settings) => {
+        },
         onAuthConfigError: (settings, err) => {
           console.log("onAuthConfigError");
         },
@@ -110,7 +114,7 @@ loadLuigiPostLogin = (name, email) => {
           pathSegment: "home",
           label:
             "User Last Login : " +
-            new Date().toLocaleString("en-CA", { timeZone: "IST" }),
+            new Date().toLocaleString("en-CA", {timeZone: "IST"}),
           hideFromNav: false,
           children: [
             {
@@ -184,6 +188,20 @@ loadLuigiPostLogin = (name, email) => {
               },
               viewUrl:
                 "http://localhost/CoreWeb/commission/commissionDisbursementAction_input.action?ORIGIN=LUIGI&language=en&pageCode=COMMDISINITIATE&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Imp3cy1rZXktcHVibGljLTEifQ.eyJzZXJ2aWNlUmVxdWVzdElkIjoiNzRjZjExODktZGYxNi00ZjkwLTkyY2QtYzY0ZGM2NjIzNWQ2IiwidXNlcl9uYW1lIjoiNzRjZjExODktZGYxNi00ZjkwLTkyY2QtYzY0ZGM2NjIzNWQ2IiwiYXV0aG9yaXphdGlvblByb2ZpbGVDb2RlIjoiTmV0YWRtaW5EZWZhdWx0IiwiaWRlbnRpZmllclZhbHVlIjoibmV0YWRtaW4yNTU4IiwiaWRlbnRpZmllclR5cGUiOiJsb2dpbklkIiwiY2F0ZWdvcnlDb2RlIjoiTldBRE0iLCJ1c2VySWQiOiJVUy44MzQ0MTYxMjc1OTAzODEwOCIsImRldmljZUlkIjoiZGV2aWNlMiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJjbGllbnRfaWQiOiJkYnhwc3lzYWRtaW4zMDMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwibmFtZSI6InN1cmVzaCBzYWh1IiwiZXhwIjoxNjQ1NTIyMDQ4LCJqdGkiOiI0YjgyNGU5MS1lMWM3LTQ0NzAtYjI1Yi0wNDFkNjk4MWU5ZjQifQ.DeQgKlWRE6R9eXJYIN85fIGJZuQDkbUvTAtOPIKwV7_K05J9DBz8LX0oqL58e_FotRwPghVNfFjxw6gmfF7sIFIrCtmxSuznmLF9LcuhFn7OsSZnVGByGZOQz5eU3gFyLzkVB6cibi-hQOnsYofnSkZN77bKI50qm9tJ1LtU5rmcxpjGOE7JGhQizi3uO8iM-YMvEhBRWmgYSQpFqI-y06tiebSYOfFzrZLnvKWpD7fnDYLXg5Guh2POjACa_eMFcXdBpeirLGBa7fD_RKk7wrd1_Hyql8ztt3j_dMa4xBayVLMkHkFdaJ1Txf4lu-WTttUgusfnWYJDe9hWJFRFvA",
+            },
+            {
+              pathSegment: "svelte",
+              label: "Svelte Demo App",
+              category: {
+                label: "Test Zone",
+                icon: "customize",
+                collapsible: true,
+              },
+              loadingIndicator: {
+                enabled: false,
+              },
+              viewUrl:
+                "http://localhost:3000",
             },
             {
               pathSegment: "stock",

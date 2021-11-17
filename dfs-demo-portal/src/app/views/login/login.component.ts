@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, OnInit} from '@angular/core';
 declare var LuigiClient: any;
 
 @Component({
@@ -8,15 +7,16 @@ declare var LuigiClient: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  hide = false;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
 
   }
 
   login = () => {
-    //otp.
     LuigiClient.sendCustomMessage({id: 'overview'});
   }
+
 }

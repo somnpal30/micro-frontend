@@ -41,9 +41,9 @@
               "node_modules/jquery/dist/jquery.js",
               "node_modules/@luigi-project/core/luigi.js",
               "node_modules/@luigi-project/client/luigi-client.js",
-              "src/assets/I18nProvider.js",
+             /* "src/assets/I18nProvider.js",
               "src/assets/ContextSwitcher.js",
-              "src/assets/luigi-config.js",
+              "src/assets/luigi-config.js",*/
               "src/assets/script/sample.js"
             ]
           },
